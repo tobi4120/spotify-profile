@@ -2,10 +2,9 @@ import { combineReducers } from 'redux';
 
 const userReducer = (current_user={}, action) => {
     switch (action.type) {
-        case "LOGIN":
-            console.log(action.payload)
+        case "GET_USER_INFO":
 
-            return current_user
+            return action.payload.data
 
         default:
             return current_user;

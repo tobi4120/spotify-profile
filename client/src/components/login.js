@@ -1,6 +1,4 @@
 import React from "react";
-import { login } from "../actions";
-import { connect } from 'react-redux';
 
 function Login(props) {
     return (
@@ -11,6 +9,4 @@ function Login(props) {
         </div>
     )
 }
-export default connect(null, {
-    login
-})(Login);
+export default Login;
