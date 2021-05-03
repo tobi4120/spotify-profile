@@ -53,14 +53,20 @@ export default function useAuth(code) {
     useEffect(() => {
         if (!refreshToken || !expiresIn || !tokenTimestamp) return
 
+        console.log(Date.now() - (parseInt(tokenTimestamp)))
+        console.log(3600 * 1000)
+
         // Check to see if the access token is expired (if the current time is greater than an hour after the token was issued)
-        if (new Date().getTime() > (tokenTimestamp + (60*60*1000))) {
+        if (parseInt(new Date().getTime()) > (parseInt(tokenTimestamp) + (3600 * 1000))) {
 
             axios
             .post("http://localhost:3001/refresh", {
                 refreshToken,
             })
             .then(res => {
+                console.log('working...')
+                console.log(res)
+                
                 setAccessToken(res.data.accessToken)
                 setTokenTimestamp(new Date().getTime())
 
@@ -71,31 +77,9 @@ export default function useAuth(code) {
                 window.location = "/"
                 localStorage.clear();
             })
-
-        } else {
-            let time_until_refresh = (tokenTimestamp + (60*60*1000)) - new Date().getTime()
-            const timeout = setTimeout(() => {
-                axios
-                    .post("http://localhost:3001/refresh", {
-                        refreshToken,
-                    })
-                    .then(res => {
-                        setAccessToken(res.data.accessToken)
-                        setTokenTimestamp(new Date().getTime())
-
-                        localStorage.setItem("access_token", res.data.accessToken)
-                        localStorage.setItem("token_timestamp", new Date().getTime())
-                    })
-                    .catch(() => {
-                        window.location = "/"
-                        localStorage.clear();
-                    })
-                }, (time_until_refresh))
-        
-            return () => clearTimeout(timeout)
         }
 
-    }, [refreshToken, tokenTimestamp])
+    }, [refreshToken])
 
   return accessToken
 }
