@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-const headers = {};
-
 export const get_user_info = (accessToken) =>
     async (dispatch) => {
         

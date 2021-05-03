@@ -1,5 +1,7 @@
 import React from "react";
 
+// show_dialog=true
+
 function Login(props) {
     return (
         <div>
