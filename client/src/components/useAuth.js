@@ -21,6 +21,7 @@ export default function useAuth(code) {
             return accessToken
         }
 
+        // Get access token from Spotify API
         const fetchData = async () => {
             axios.post("http://localhost:3001/login", {
             code,
@@ -53,20 +54,25 @@ export default function useAuth(code) {
     useEffect(() => {
         if (!refreshToken || !expiresIn || !tokenTimestamp) return
 
+        // For testing only...
         console.log(Date.now() - (parseInt(tokenTimestamp)))
         console.log(3600 * 1000)
 
         // Check to see if the access token is expired (if the current time is greater than an hour after the token was issued)
         if (parseInt(new Date().getTime()) > (parseInt(tokenTimestamp) + (3600 * 1000))) {
 
+            // Refresh access token
             axios
             .post("http://localhost:3001/refresh", {
                 refreshToken,
             })
             .then(res => {
+
+                // For testing only...
                 console.log('working...')
                 console.log(res)
-                
+
+                // Put the new access token and timestamp into variables and onto local storage
                 setAccessToken(res.data.accessToken)
                 setTokenTimestamp(new Date().getTime())
 
@@ -83,6 +89,3 @@ export default function useAuth(code) {
 
   return accessToken
 }
-
-
-//(token_start_time + one_hour) - current_time
