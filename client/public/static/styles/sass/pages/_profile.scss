@@ -1,0 +1,30 @@
+.profile {
+    // Header
+    &__header {
+        text-align: center;
+
+        &__account-stats {
+            display: inline-block;
+
+            .stats {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        .logout {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    // Body
+    &__body {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 3rem;
+        }
+    }
+}
