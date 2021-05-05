@@ -50,8 +50,14 @@ function Home(props) {
         if (seconds < 10) {
             seconds = `0${seconds}`
         }
-
         return `${minutes}:${seconds}`
+    }
+
+    // Logout
+    const logout = () => {
+
+        localStorage.clear();
+        window.location = "/"
     }
 
     if (isLoading) {
@@ -60,69 +66,77 @@ function Home(props) {
 
     return (
         <div className="home">
-
-            {/* Header */}
-            <div className="home__header">
-                <a className="home__header__username" href={props.current_user.external_urls.spotify}>
-                    <h1>{props.current_user.display_name}</h1>
-                </a>
-
-                <div className="home__header__account-stats">
-                    <span>{props.current_user.followers.total}</span>
-                    <p>Followers</p>
-
-                    <span>{props.following.artists.total}</span>
-                    <p>Following</p>
-
-                    <span>{props.playlists.total}</span>
-                    <p>Playlists</p>
-                </div>
+            <div className="menu">
+                
             </div>
 
-            {/* Body */}           
-            <div className="home__body">
+            <div className="dashboard">
+                {/* Header */}
+                <div className="home__header">
+                    <a className="home__header__username" href={props.current_user.external_urls.spotify}>
+                        <h1>{props.current_user.display_name}</h1>
+                    </a>
 
-                {/* Top Artists */} 
-                <div className="home__body__top-artists">
-                    <div className="home__body__top-artists__header">
-                        <h2>Top Artists of All Time</h2>
-                        <a href="#">See more</a>
+                    <div className="home__header__account-stats">
+                        <span>{props.current_user.followers.total}</span>
+                        <p>Followers</p>
+
+                        <span>{props.following.artists.total}</span>
+                        <p>Following</p>
+
+                        <span>{props.playlists.total}</span>
+                        <p>Playlists</p>
                     </div>
-
-                    <ul className="home__body__top-artists__list">
-                        {props.top_artists.long.items.slice(0, 10).map((artist) => {
-                            return (    
-                                <li className="home__body__top-artists__list__artist" key={artist.id}>
-                                    {artist.images[0] && <img src={artist.images[0].url} />}
-                                    <p>{artist.name}</p>
-                                </li>
-                            )
-                        })}
-                    </ul>
                 </div>
 
-                {/* Top Tracks */} 
-                <div className="home__body__top-tracks">
-                    <div className="home__body__top-tracks__header">
-                        <h2>Top Tracks of All Time</h2>
-                        <a href="#">See more</a>
+                {/* Logout */}
+                <button className="logout" onClick={() => logout()}>Logout</button>
+
+                {/* Body */}           
+                <div className="home__body">
+
+                    {/* Top Artists */} 
+                    <div className="home__body__top-artists">
+                        <div className="home__body__top-artists__header">
+                            <h2>Top Artists of All Time</h2>
+                            <a href="#">See more</a>
+                        </div>
+
+                        <ul className="home__body__top-artists__list">
+                            {props.top_artists.long.items.slice(0, 10).map((artist) => {
+                                return (    
+                                    <li className="home__body__top-artists__list__artist" key={artist.id}>
+                                        {artist.images[0] && <img src={artist.images[0].url} />}
+                                        <p>{artist.name}</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
                     </div>
 
-                    <ul className="home__body__top-tracks__list">
-                        {props.top_tracks.long.items.slice(0, 10).map((track) => {
-                            return (    
-                                <li className="home__body__top-tracks__list__track" key={track.id}>
-                                    {track.album.images[0] && <img src={track.album.images[0].url} />}
-                                    <p className="track-name">{track.name}</p>
-                                    <p className="artist-name">{track.artists[0].name}</p>
-                                    <p className="album-name">{track.album.name}</p>
-                                    <p className="duration">{convert_mil(track.duration_ms, track.name)}</p>
-                                </li>
-                            )
-                        })}
-                    </ul>
+                    {/* Top Tracks */} 
+                    <div className="home__body__top-tracks">
+                        <div className="home__body__top-tracks__header">
+                            <h2>Top Tracks of All Time</h2>
+                            <a href="#">See more</a>
+                        </div>
+
+                        <ul className="home__body__top-tracks__list">
+                            {props.top_tracks.long.items.slice(0, 10).map((track) => {
+                                return (    
+                                    <li className="home__body__top-tracks__list__track" key={track.id}>
+                                        {track.album.images[0] && <img src={track.album.images[0].url} />}
+                                        <p className="track-name">{track.name}</p>
+                                        <p className="artist-name">{track.artists[0].name}</p>
+                                        <p className="album-name">{track.album.name}</p>
+                                        <p className="duration">{convert_mil(track.duration_ms, track.name)}</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    
                 </div>
-                
             </div>
         </div>
     )
