@@ -1,0 +1,41 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+body {
+  box-sizing: border-box; }
+
+.heading-primary {
+  font-size: 2rem; }
+
+.menu {
+  height: 100vh;
+  width: 10%;
+  border-right: 1px solid gray; }
+
+.home {
+  display: flex; }
+  .home__dashboard {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll; }
+
+.profile__header {
+  text-align: center; }
+  .profile__header__account-stats {
+    display: inline-block; }
+    .profile__header__account-stats .stats {
+      display: flex;
+      align-items: center; }
+  .profile__header .logout {
+    display: block;
+    margin: 0 auto; }
+
+.profile__body {
+  display: flex;
+  justify-content: center; }
+  .profile__body img {
+    width: 3rem; }
