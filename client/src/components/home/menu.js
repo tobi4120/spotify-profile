@@ -6,6 +6,7 @@ function Menu(props) {
             <ul>
                 <li><a href="/">Profile</a></li>
                 <li><a href="/top-artists">Top Artists</a></li>
+                <li><a href="/top-tracks">Top Tracks</a></li>
             </ul>
         </div>
     )

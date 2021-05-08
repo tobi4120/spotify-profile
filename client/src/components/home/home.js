@@ -4,6 +4,7 @@ import Menu from "./menu";
 import Profile from "./pages/profile";
 import TopArtists from "./pages/top_artists";
 import Artist from "./pages/artist";
+import TopTracks from "./pages/top_tracks";
 
 function Home(props) {
     const code = props.code
@@ -23,6 +24,9 @@ function Home(props) {
                         )} />
                         <Route path="/top-artists/:id" render={(props) => (
                             <Artist {...props} code={code} />
+                        )} />
+                        <Route path="/top-tracks" exact render={(props) => (
+                            <TopTracks {...props} code={code} />
                         )} />
                     </Switch>
                 </Router>

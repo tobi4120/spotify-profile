@@ -47,7 +47,6 @@ export default function Artist(props) {
                 <img src={artist.images[0].url}/>:
                 <p>Image not found!</p>
             }
-            
             <h1>{artist.name}</h1> 
 
             <div className="artist-page__stats">

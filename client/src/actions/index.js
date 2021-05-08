@@ -99,3 +99,33 @@ export const get_topTracks_long = (accessToken) =>
 
         dispatch({ type: 'GET_TOP_TRACKS_LONG', payload: response });
     }
+
+// Get user's top tracks (medium term)
+export const get_topTracks_medium = (accessToken) => 
+    async (dispatch) => {
+        
+        const response = await axios.get("https://api.spotify.com/v1/me/top/tracks", {
+            params: {
+                time_range: "medium_term",
+                limit: 50,
+            },  
+            headers: { "Authorization" : `Bearer ${accessToken}` }
+        })
+
+        dispatch({ type: 'GET_TOP_TRACKS_MEDIUM', payload: response });
+    }
+
+// Get user's top tracks (short term)
+export const get_topTracks_short = (accessToken) => 
+    async (dispatch) => {
+        
+        const response = await axios.get("https://api.spotify.com/v1/me/top/tracks", {
+            params: {
+                time_range: "short_term",
+                limit: 50,
+            },  
+            headers: { "Authorization" : `Bearer ${accessToken}` }
+        })
+
+        dispatch({ type: 'GET_TOP_TRACKS_SHORT', payload: response });
+    }

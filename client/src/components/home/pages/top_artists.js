@@ -11,8 +11,10 @@ function TopArtists(props) {
     const [term, set_term] = useState("long_term")
 
     useEffect(() => {
-
         if (!accessToken) return
+        fetchData();
+
+    }, [accessToken]);
 
         // Get the user's top artists in the long, medium, and short term from Spotify API
         const fetchData = async () => {
@@ -29,15 +31,11 @@ function TopArtists(props) {
             set_isLoading(false);
         }
 
-        fetchData();
-
-    }, [accessToken]);
-
     if (isLoading) return <Loader />
 
     return (
         <div className="top-artists">
-            <h1 className="heading-primary">Top Artists</h1>
+            <h1 className="heading-secondary">Top Artists</h1>
 
             <div className="top-artists__toggle-btns">
                 <button onClick={() => set_term("long_term")}>All Time</button>
@@ -61,9 +59,7 @@ function TopArtists(props) {
 }
 
 const mapStateToProps = (state) => {
-    return { 
-        top_artists: state.top_artists,
-    }
+    return { top_artists: state.top_artists }
 }
 
 export default connect(mapStateToProps, {
