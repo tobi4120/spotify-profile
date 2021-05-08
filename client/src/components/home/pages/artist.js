@@ -33,13 +33,36 @@ export default function Artist(props) {
         console.log(response.data.artists[0])
     }
 
+    const numberWithCommas = (x) => {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
     if (isLoading) return <Loader />
 
     if (error || !artist) return <div>Artist not found!</div>
 
     return (
-        <div>
-            Hello, world
+        <div className="artist-page">
+            {artist.images[0]?
+                <img src={artist.images[0].url}/>:
+                <p>Image not found!</p>
+            }
+            
+            <h1>{artist.name}</h1> 
+
+            <div className="artist-page__stats">
+                <p>{numberWithCommas(artist.followers.total)}</p>
+                <h2>Followers</h2>
+
+                {artist.genres.map((genre, index) => {
+                    return <p key={index}>{genre}</p>
+                })}
+                <h2>Genres</h2>
+
+                <p>{artist.popularity}%</p>
+                <h2>Popularity</h2>
+
+            </div>
         </div>
     )
 }
