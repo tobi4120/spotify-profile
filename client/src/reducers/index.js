@@ -39,6 +39,14 @@ const topArtistsReducer = (top_artists={}, action) => {
 
             return {...top_artists, long: action.payload.data}
 
+        case "GET_TOP_ARTISTS_MEDIUM":
+
+            return {...top_artists, medium: action.payload.data}
+
+        case "GET_TOP_ARTISTS_SHORT":
+
+            return {...top_artists, short: action.payload.data}
+
         default:
             return top_artists;
     }

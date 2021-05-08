@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useAuth from '../../useAuth';
+import Loader from "../loader";
 
 import { connect } from 'react-redux';
 import { get_user_info, get_playlists, get_following, 
@@ -60,9 +61,7 @@ function Profile(props) {
         window.location = "/"
     }
 
-    if (isLoading) {
-        return <div>Loading...</div>
-    }
+    if (isLoading) return <Loader />
 
     return (
         <div className="profile">
@@ -102,7 +101,7 @@ function Profile(props) {
                 <div className="profile__body__top-artists">
                     <div className="profile__body__top-artists__header">
                         <h2>Top Artists of All Time</h2>
-                        <a href="#">See more</a>
+                        <a href="/top-artists">See more</a>
                     </div>
 
                     <ul className="profile__body__top-artists__list">
@@ -110,7 +109,7 @@ function Profile(props) {
                             return (    
                                 <li className="profile__body__top-artists__list__artist" key={artist.id}>
                                     {artist.images[0] && <img src={artist.images[0].url} />}
-                                    <p>{artist.name}</p>
+                                    <a href={`/top-artists/${artist.id}`}>{artist.name}</a>
                                 </li>
                             )
                         })}

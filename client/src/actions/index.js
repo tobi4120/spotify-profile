@@ -55,6 +55,36 @@ export const get_topArtists_long = (accessToken) =>
         dispatch({ type: 'GET_TOP_ARTISTS_LONG', payload: response });
     }
 
+// Get user's top artists (med. term)
+export const get_topArtists_medium = (accessToken) => 
+    async (dispatch) => {
+        
+        const response = await axios.get("https://api.spotify.com/v1/me/top/artists", {
+            params: {
+                time_range: "medium_term",
+                limit: 50,
+            },  
+            headers: { "Authorization" : `Bearer ${accessToken}` }
+        })
+
+        dispatch({ type: 'GET_TOP_ARTISTS_MEDIUM', payload: response });
+    }
+
+// Get user's top artists (short term)
+export const get_topArtists_short = (accessToken) => 
+    async (dispatch) => {
+        
+        const response = await axios.get("https://api.spotify.com/v1/me/top/artists", {
+            params: {
+                time_range: "short_term",
+                limit: 50,
+            },  
+            headers: { "Authorization" : `Bearer ${accessToken}` }
+        })
+
+        dispatch({ type: 'GET_TOP_ARTISTS_SHORT', payload: response });
+    }
+
 // Get user's top tracks (long term)
 export const get_topTracks_long = (accessToken) => 
     async (dispatch) => {
