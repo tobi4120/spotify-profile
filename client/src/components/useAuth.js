@@ -54,10 +54,6 @@ export default function useAuth(code) {
     useEffect(() => {
         if (!refreshToken || !expiresIn || !tokenTimestamp) return
 
-        // For testing only...
-        console.log(Date.now() - (parseInt(tokenTimestamp)))
-        console.log(3600 * 1000)
-
         // Check to see if the access token is expired (if the current time is greater than an hour after the token was issued)
         if (parseInt(new Date().getTime()) > (parseInt(tokenTimestamp) + (3600 * 1000))) {
 
@@ -67,10 +63,6 @@ export default function useAuth(code) {
                 refreshToken,
             })
             .then(res => {
-
-                // For testing only...
-                console.log('working...')
-                console.log(res)
 
                 // Put the new access token and timestamp into variables and onto local storage
                 setAccessToken(res.data.accessToken)

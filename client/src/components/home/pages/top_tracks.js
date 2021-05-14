@@ -29,7 +29,6 @@ function TopTracks(props) {
         await props.get_topTracks_short(accessToken);
 
         set_isLoading(false);
-        console.log(props.top_tracks.long.items)
     }
 
     if (isLoading) return <Loader />

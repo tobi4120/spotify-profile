@@ -29,8 +29,6 @@ export default function Artist(props) {
 
         set_artist(response.data.artists[0]);
         set_isLoading(false)
-
-        console.log(response.data.artists[0])
     }
 
     const numberWithCommas = (x) => {
