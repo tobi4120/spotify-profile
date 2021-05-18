@@ -43,7 +43,7 @@ function Profile(props) {
     }, [accessToken]) 
 
     // Convert milliseconds to mm:ss format
-    const convert_mil = (milliseconds, name) => {
+    const convert_mil = (milliseconds) => {
 
         let minutes = Math.floor(milliseconds/60000)
         let seconds = Math.round((milliseconds%60000)/1000)
@@ -108,8 +108,10 @@ function Profile(props) {
                         {props.top_artists.long.items.slice(0, 10).map((artist) => {
                             return (    
                                 <li className="profile__body__top-artists__list__artist" key={artist.id}>
-                                    {artist.images[0] && <img src={artist.images[0].url} />}
-                                    <a href={`/top-artists/${artist.id}`}>{artist.name}</a>
+                                    <a href={`/top-artists/${artist.id}`}>
+                                        {artist.images[0] && <img src={artist.images[0].url} />}
+                                        <p>{artist.name}</p>
+                                    </a>
                                 </li>
                             )
                         })}
@@ -127,11 +129,13 @@ function Profile(props) {
                         {props.top_tracks.long.items.slice(0, 10).map((track) => {
                             return (    
                                 <li className="profile__body__top-tracks__list__track" key={track.id}>
+                                    <a href={`/top-tracks/${track.id}`}>
                                     {track.album.images[0] && <img src={track.album.images[0].url} />}
-                                    <p className="track-name">{track.name}</p>
-                                    <p className="artist-name">{track.artists[0].name}</p>
-                                    <p className="album-name">{track.album.name}</p>
-                                    <p className="duration">{convert_mil(track.duration_ms, track.name)}</p>
+                                        <p className="track-name">{track.name}</p>
+                                        <p className="artist-name">{track.artists[0].name}</p>
+                                        <p className="album-name">{track.album.name}</p>
+                                        <p className="duration">{convert_mil(track.duration_ms, track.name)}</p>
+                                    </a>
                                 </li>
                             )
                         })}
