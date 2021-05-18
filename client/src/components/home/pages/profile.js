@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useAuth from '../../useAuth';
 import Loader from "../loader";
+import { convert_mil } from "../helper_functions";
 
 import { connect } from 'react-redux';
 import { get_user_info, get_playlists, get_following, 
@@ -41,18 +42,6 @@ function Profile(props) {
         fetchData();
 
     }, [accessToken]) 
-
-    // Convert milliseconds to mm:ss format
-    const convert_mil = (milliseconds) => {
-
-        let minutes = Math.floor(milliseconds/60000)
-        let seconds = Math.round((milliseconds%60000)/1000)
-
-        if (seconds < 10) {
-            seconds = `0${seconds}`
-        }
-        return `${minutes}:${seconds}`
-    }
 
     // Logout
     const logout = () => {

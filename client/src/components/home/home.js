@@ -6,6 +6,7 @@ import TopArtists from "./pages/top_artists";
 import Artist from "./pages/artist";
 import TopTracks from "./pages/top_tracks";
 import Track from "./pages/track";
+import Recent from "./pages/recent";
 
 function Home(props) {
     const code = props.code
@@ -29,8 +30,11 @@ function Home(props) {
                         <Route path="/top-tracks" exact render={(props) => (
                             <TopTracks {...props} code={code} />
                         )} />
-                        <Route path="/top-tracks/:id" exact render={(props) => (
+                        <Route path="/top-tracks/:id" render={(props) => (
                             <Track {...props} code={code} />
+                        )} />
+                        <Route path="/recent" exact render={(props) => (
+                            <Recent {...props} code={code} />
                         )} />
                     </Switch>
                 </Router>

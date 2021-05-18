@@ -47,7 +47,7 @@ export default function Track(props) {
             set_isLoading(false)
         })
 
-        // Parse through features response and put the necessary data in an array called features
+        // Parse through features response and put the necessary data in an object called features
         const features = { 
             "acousticness": features_response.data.acousticness, 
             "danceability":  features_response.data.danceability,
@@ -66,8 +66,6 @@ export default function Track(props) {
 
         set_isLoading(false)
     }
-
-    console.log(track)
 
     if (isLoading) return <Loader />
 
