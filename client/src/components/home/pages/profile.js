@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useAuth from '../../useAuth';
 import Loader from "../loader";
-import { convert_mil } from "../helper_functions";
+import TrackRow from "../page_elements/track_row";
 
 import { connect } from 'react-redux';
 import { get_user_info, get_playlists, get_following, 
@@ -114,21 +114,13 @@ function Profile(props) {
                         <a href="#">See more</a>
                     </div>
 
-                    <ul className="profile__body__top-tracks__list">
-                        {props.top_tracks.long.items.slice(0, 10).map((track) => {
+                    <div className="profile__body__top-tracks__tracklist">
+                        {props.top_tracks.long.items.slice(0, 10).map((track, index) => {
                             return (    
-                                <li className="profile__body__top-tracks__list__track" key={track.id}>
-                                    <a href={`/top-tracks/${track.id}`}>
-                                    {track.album.images[0] && <img src={track.album.images[0].url} />}
-                                        <p className="track-name">{track.name}</p>
-                                        <p className="artist-name">{track.artists[0].name}</p>
-                                        <p className="album-name">{track.album.name}</p>
-                                        <p className="duration">{convert_mil(track.duration_ms, track.name)}</p>
-                                    </a>
-                                </li>
+                                <TrackRow key={index} track={track} />
                             )
                         })}
-                    </ul>
+                    </div>
                 </div>
                 
             </div>

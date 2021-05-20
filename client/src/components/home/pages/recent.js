@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../useAuth";
 import Loader from "../loader";
 import axios from "axios";
-import { convert_mil } from "../helper_functions";
+import TrackRow from "../page_elements/track_row";
 
 export default function Recent(props) {
     const accessToken = useAuth(props.code)
@@ -35,14 +35,7 @@ export default function Recent(props) {
             <div className="recent-tracks__tracklist">
                 {recentTracks.map((track, index) => {
                     return (
-                        <div key={index}>
-                            <a href={`top-tracks/${track.track.id}`}>
-                                <img src={track.track.album.images && track.track.album.images[2].url} />
-                                <p>{track.track.name}</p>
-                                <p>{track.track.artists[0].name} &middot; {track.track.album.name}</p>
-                                <p>{convert_mil(track.track.duration_ms)}</p>
-                            </a>
-                        </div>
+                        <TrackRow key={index} track={track.track} />
                     )
                 })}
             </div>

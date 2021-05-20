@@ -4,6 +4,7 @@ import useAuth from '../../useAuth';
 import Loader from "../loader";
 import { Link } from "react-router-dom"
 import { get_topTracks_long, get_topTracks_medium, get_topTracks_short} from "../../../actions";
+import TrackRow from "../page_elements/track_row";
 
 function TopTracks(props) {
     const accessToken = useAuth(props.code);
@@ -43,17 +44,17 @@ function TopTracks(props) {
                 <button onClick={() => set_term("short_term")}>Last 4 Weeks</button>
             </div>
 
-            <ul className="top-tracks__tracks">
-                {term === "long_term"? props.top_tracks.long.items.map(track => {
-                    return <li key={track.id}><Link to={`top-tracks/${track.id}`}>{track.name}</Link></li>
+            <div className="top-tracks__tracklist">
+                {term === "long_term"? props.top_tracks.long.items.map((track, index) => {
+                    return <TrackRow key={index} track={track} />
                 }): 
-                term === "medium_term"? props.top_tracks.medium.items.map(track => {
-                    return <li key={track.id}><Link to={`top-tracks/${track.id}`}>{track.name}</Link></li>
+                term === "medium_term"? props.top_tracks.medium.items.map((track, index) => {
+                    return <TrackRow key={index} track={track} />
                 }):
-                term === "short_term"? props.top_tracks.short.items.map(track => {
-                    return <li key={track.id}><Link to={`top-tracks/${track.id}`}>{track.name}</Link></li>
+                term === "short_term"? props.top_tracks.short.items.map((track, index) => {
+                    return <TrackRow key={index} track={track} />
                 }): null}
-            </ul>
+            </div>
         </div>
     )
 }
