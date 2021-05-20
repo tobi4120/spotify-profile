@@ -24,13 +24,13 @@ function Home(props) {
                         <Route path="/top-artists" exact render={(props) => (
                             <TopArtists {...props} code={code} />
                         )} />
-                        <Route path="/top-artists/:id" render={(props) => (
+                        <Route path="/artist/:id" render={(props) => (
                             <Artist {...props} code={code} />
                         )} />
                         <Route path="/top-tracks" exact render={(props) => (
                             <TopTracks {...props} code={code} />
                         )} />
-                        <Route path="/top-tracks/:id" render={(props) => (
+                        <Route path="/track/:id" render={(props) => (
                             <Track {...props} code={code} />
                         )} />
                         <Route path="/recent" exact render={(props) => (

@@ -45,13 +45,13 @@ function TopArtists(props) {
 
             <ul className="top-artists__artists">
                 {term === "long_term"? props.top_artists.long.items.map(artist => {
-                    return <li key={artist.id}><Link to={`top-artists/${artist.id}`}>{artist.name}</Link></li>
+                    return <li key={artist.id}><Link to={`artist/${artist.id}`}>{artist.name}</Link></li>
                 }): 
                 term === "medium_term"? props.top_artists.medium.items.map(artist => {
-                    return <li key={artist.id}><Link to={`top-artists/${artist.id}`}>{artist.name}</Link></li>
+                    return <li key={artist.id}><Link to={`artist/${artist.id}`}>{artist.name}</Link></li>
                 }):
                 term === "short_term"? props.top_artists.short.items.map(artist => {
-                    return <li key={artist.id}><Link to={`top-artists/${artist.id}`}>{artist.name}</Link></li>
+                    return <li key={artist.id}><Link to={`artist/${artist.id}`}>{artist.name}</Link></li>
                 }): null}
             </ul>
         </div>
