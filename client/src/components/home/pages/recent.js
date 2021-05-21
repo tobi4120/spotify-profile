@@ -22,8 +22,6 @@ export default function Recent(props) {
 
         set_recentTracks(response.data.items);
         set_isLoading(false);
-
-        console.log(response.data.items);
     };
 
     if (isLoading) return <Loader />;

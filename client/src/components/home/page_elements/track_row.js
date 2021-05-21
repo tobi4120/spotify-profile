@@ -1,7 +1,6 @@
 import { convert_mil } from "../helper_functions";
 
 export default function TrackRow(props) {
-    console.log(props.track)
     return (
         <div className="track-row">
             <a href={`track/${props.track.id}`}>
