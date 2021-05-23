@@ -27,24 +27,18 @@ export default function Track(props) {
         .catch(() => {
             set_error(true)
             set_isLoading(false)
+
+            return
         })
 
         // Get audio analysis about the track
         const analysis_response = await axios.get(`https://api.spotify.com/v1/audio-analysis/${track_id}`, {
             headers: { "Authorization" : `Bearer ${accessToken}` }
         })
-        .catch(() => {
-            set_error(true)
-            set_isLoading(false)
-        })
 
         // Get audio features for the track
         const features_response = await axios.get(`https://api.spotify.com/v1/audio-features/${track_id}`, {
             headers: { "Authorization" : `Bearer ${accessToken}` }
-        })
-        .catch(() => {
-            set_error(true)
-            set_isLoading(false)
         })
 
         // Parse through features response and put the necessary data in an object called features
@@ -69,7 +63,7 @@ export default function Track(props) {
 
     if (isLoading) return <Loader />
 
-    if (error || !track) return <div>Artist not found!</div>
+    if (error || !track) return <div>Track not found!</div>
 
     return (
         <div className="track-page">
