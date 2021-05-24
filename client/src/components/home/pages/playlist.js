@@ -4,7 +4,7 @@ import Loader from "../loader";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import { tracks_in_string, get_avg_features } from "../helper_functions";
-import TrackRow, { track_row } from "../page_elements/track_row";
+import TrackRow from "../page_elements/track_row";
 
 export default function Playlist(props) {
     const accessToken = useAuth(props.code);
@@ -66,7 +66,7 @@ export default function Playlist(props) {
                 <p>By {playlist.owner.display_name}</p>
                 <p>{playlist.tracks.total} Tracks</p>
 
-                <button>Get Reccomendations</button>
+                <a href={`/reccomendations/${playlist.id}`}>Get Reccomendations</a>
 
                 <div className="playlist__features">
                     <h2>Audio Features</h2>

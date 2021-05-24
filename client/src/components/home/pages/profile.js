@@ -111,7 +111,7 @@ function Profile(props) {
                 <div className="profile__body__top-tracks">
                     <div className="profile__body__top-tracks__header">
                         <h2>Top Tracks of All Time</h2>
-                        <a href="#">See more</a>
+                        <a href="/top-tracks">See more</a>
                     </div>
 
                     <div className="profile__body__top-tracks__tracklist">

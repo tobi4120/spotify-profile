@@ -9,6 +9,7 @@ import Track from "./pages/track";
 import Recent from "./pages/recent";
 import Playlists from "./pages/playlists";
 import Playlist from "./pages/playlist";
+import Reccomendations from "./pages/reccomendations";
 
 function Home(props) {
     const code = props.code
@@ -43,6 +44,9 @@ function Home(props) {
                         )} />
                         <Route path="/playlist/:id" render={(props) => (
                             <Playlist {...props} code={code} />
+                        )} />
+                        <Route path="/reccomendations/:id" render={(props) => (
+                            <Reccomendations {...props} code={code} />
                         )} />
                     </Switch>
                 </Router>
