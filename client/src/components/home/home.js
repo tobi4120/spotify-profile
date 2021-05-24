@@ -7,7 +7,8 @@ import Artist from "./pages/artist";
 import TopTracks from "./pages/top_tracks";
 import Track from "./pages/track";
 import Recent from "./pages/recent";
-import Playlists from "./pages/playlist";
+import Playlists from "./pages/playlists";
+import Playlist from "./pages/playlist";
 
 function Home(props) {
     const code = props.code
@@ -39,6 +40,9 @@ function Home(props) {
                         )} />
                         <Route path="/playlists" exact render={(props) => (
                             <Playlists {...props} code={code} />
+                        )} />
+                        <Route path="/playlist/:id" render={(props) => (
+                            <Playlist {...props} code={code} />
                         )} />
                     </Switch>
                 </Router>

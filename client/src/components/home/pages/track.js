@@ -27,8 +27,6 @@ export default function Track(props) {
         .catch(() => {
             set_error(true)
             set_isLoading(false)
-
-            return
         })
 
         // Get audio analysis about the track

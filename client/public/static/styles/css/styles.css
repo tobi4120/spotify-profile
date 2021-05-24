@@ -39,3 +39,10 @@ body {
   justify-content: center; }
   .profile__body img {
     width: 3rem; }
+
+.playlist {
+  display: flex; }
+  .playlist__left {
+    width: 30%; }
+    .playlist__left img {
+      width: 250px; }

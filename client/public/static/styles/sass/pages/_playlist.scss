@@ -1,0 +1,11 @@
+.playlist {
+    display: flex;
+
+    &__left {
+        width: 30%;
+
+        img {
+            width: 250px;
+        }
+    }
+}
