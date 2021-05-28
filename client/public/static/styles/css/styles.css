@@ -47,22 +47,37 @@ a {
   padding-top: 20px;
   background-color: #040306; }
   .menu img {
-    width: 60px;
+    width: 55px;
     cursor: pointer;
-    margin-bottom: 60px; }
+    margin-top: 9px;
+    margin-bottom: 70px; }
   .menu ul {
     width: 100%; }
   .menu li {
     text-align: center;
-    border: 1px solid red;
-    padding: 8px 0; }
-  .menu a {
-    color: white;
+    padding: 12px 0;
+    transition: 0.3s;
+    cursor: pointer;
+    border-left: 5px solid rgba(1, 1, 1, 0); }
+    .menu li:hover {
+      background-color: #181818;
+      border-left: 5px solid #1ed760; }
+  .menu p {
+    color: #9b9b9b;
     font-family: circular-light;
     display: block;
-    font-size: 0.8rem; }
+    font-size: 0.71rem; }
   .menu svg {
-    width: 22px; }
+    width: 20px;
+    margin-bottom: 1.5px;
+    fill: #9b9b9b; }
+  .menu .active {
+    background-color: #181818;
+    border-left: 5px solid #1ed760; }
+    .menu .active svg {
+      fill: white; }
+    .menu .active p {
+      color: white; }
 
 .home {
   display: flex; }
