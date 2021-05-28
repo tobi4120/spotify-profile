@@ -29,6 +29,14 @@
         &:hover {
             background-color: $dark-grey;
             border-left: 5px solid $spotify-green;
+
+            svg {
+                fill: white;
+            }
+    
+            p {
+                color: white;
+            }
         }
 
     }
