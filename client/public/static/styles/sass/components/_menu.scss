@@ -1,12 +1,12 @@
 .menu {
     height: 100vh;
-    width: 7.5%;
-    border-right: 1px solid gray;
+    width: 110px;
     align-items: center;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
     background-color: rgb(4, 3, 6);
+    box-shadow: rgba(0,0,0, 0.3) 0px 0px 10px;
 
     img {
         width: 55px;
@@ -43,7 +43,7 @@
 
     p {
         color: $light-grey;
-        font-family: circular-light;
+        font-family: circular-light, $back-up-fonts;
         display: block;
         font-size: 0.71rem;
     }

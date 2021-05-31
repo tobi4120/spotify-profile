@@ -25,5 +25,13 @@
 }
 
 .heading-primary {
-    font-size: 2rem;
+    font-size: 2.8rem;
+    font-family: circular-black, $back-up-fonts;
+    padding: 0;
+}
+
+.heading-tertiary {
+    color: white;
+    font-size: 1.2rem;
+    font-family: circular-medium, $back-up-fonts;
 }

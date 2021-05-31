@@ -1,0 +1,18 @@
+.btn-primary {
+    color: white;
+    border: 1px solid white;
+    padding: 12px 30px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: circular-book, $back-up-fonts;
+    border: 1px solid white;
+    border-radius: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: white;
+        color: $dark-grey;
+    }
+}
