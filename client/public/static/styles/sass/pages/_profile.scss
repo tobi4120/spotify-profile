@@ -3,15 +3,10 @@
     &__header {
         text-align: center;
 
-        &__user-icon {
-            width: 150px;
-            border: 2px solid white;
-            border-radius: 100%;
-            padding: 30px;
-            overflow: visible;
+        .user-icon {
             margin-top: 82px;
             margin-bottom: 18px;
-            fill: white;
+            width: 150px;
         }
 
         .heading-primary {

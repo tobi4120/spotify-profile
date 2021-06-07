@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import useAuth from '../../useAuth';
 import Loader from "../loader";
 import TrackRow from "../page_elements/track_row";
+import InfoIcon from "../page_elements/info-icon";
+import UserIcon from "../page_elements/user-icon";
 
 import { connect } from 'react-redux';
 import { get_user_info, get_playlists, get_following, 
@@ -57,10 +59,10 @@ function Profile(props) {
 
             {/* Header */}
             <div className="profile__header">
-                <svg className="profile__header__user-icon" viewBox="0 0 1024 1024"><path d="m730.06 679.64q-45.377 53.444-101.84 83.443t-120 29.999q-64.032 0-120.75-30.503t-102.6-84.451q-40.335 13.109-77.645 29.747t-53.948 26.722l-17.142 10.084q-29.747 19.159-51.175 57.729t-21.428 73.107 25.461 59.242 60.754 24.705h716.95q35.293 0 60.754-24.705t25.461-59.242-21.428-72.603-51.679-57.225q-6.554-4.033-18.907-10.84t-51.427-24.453-79.409-30.755zm-221.84 25.72q-34.285 0-67.561-14.873t-60.754-40.335-51.175-60.502-40.083-75.124-25.461-84.451-9.075-87.728q0-64.032 19.915-116.22t54.452-85.964 80.67-51.931 99.072-18.151 99.072 18.151 80.67 51.931 54.452 85.964 19.915 116.22q0 65.04-20.167 130.58t-53.948 116.72-81.426 83.443-98.568 32.268z"></path></svg>
-                    <h1 className="heading-primary">
-                        <a className="profile__header__username" href={props.current_user.external_urls.spotify}>{props.current_user.display_name}</a>
-                    </h1>
+                <UserIcon />
+                <h1 className="heading-primary">
+                    <a className="profile__header__username" href={props.current_user.external_urls.spotify}>{props.current_user.display_name}</a>
+                </h1>
 
                 <div className="profile__header__account-stats">
                     <div className="stats">
@@ -100,10 +102,10 @@ function Profile(props) {
                                 <li className="row" key={artist.id}>
                                     <a href={`/artist/${artist.id}`}>
                                         <div className="row__img">
-                                            <svg className="info-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 45.999 45.999" xmlSpace="preserve"><path d="M39.264,6.736c-8.982-8.981-23.545-8.982-32.528,0c-8.982,8.982-8.981,23.545,0,32.528c8.982,8.98,23.545,8.981,32.528,0 C48.245,30.281,48.244,15.719,39.264,6.736z M25.999,33c0,1.657-1.343,3-3,3s-3-1.343-3-3V21c0-1.657,1.343-3,3-3s3,1.343,3,3V33z M22.946,15.872c-1.728,0-2.88-1.224-2.844-2.735c-0.036-1.584,1.116-2.771,2.879-2.771c1.764,0,2.88,1.188,2.917,2.771 C25.897,14.648,24.746,15.872,22.946,15.872z"></path></svg>
+                                            <InfoIcon />
                                             {artist.images[0] && <img src={artist.images[0].url} />}
                                         </div>
-                                        <p className="row__name">{artist.name}</p>
+                                        <p className="paragraph">{artist.name}</p>
                                     </a>
                                 </li>
                             )

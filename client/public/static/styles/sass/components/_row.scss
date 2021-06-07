@@ -21,30 +21,6 @@
             height: 50px;
             opacity: 1;
         }
-
-        .info-icon {
-            fill: white;
-            height: 25px;
-            opacity: 0;
-            transition: 0.3s;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    // Name
-    &__name {
-        color: white;
-        font-family: circular-book, $back-up-fonts;
-        display: inline-block;
-        line-height: 1.1;
-        border-bottom: 1px solid rgba(0,0,0,0);
-
-        &:hover {
-            border-bottom: 1px solid white;
-        }
     }
 
     // Row info (for tracks)

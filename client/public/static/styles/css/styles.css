@@ -18,6 +18,9 @@ button {
   background-color: rgba(0, 0, 0, 0);
   border: none; }
 
+.page-body {
+  padding: 85px 80px; }
+
 @font-face {
   src: url(../../fonts/circular-black.woff2);
   font-family: circular-black; }
@@ -38,10 +41,25 @@ button {
   src: url(../../fonts/circular-light.woff2);
   font-family: circular-light; }
 
+.paragraph {
+  color: white;
+  font-family: circular-book, Helvetica, sans-serif;
+  display: inline-block;
+  line-height: 1.1;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0); }
+  .paragraph:hover {
+    border-bottom: 1px solid white; }
+
 .heading-primary {
   font-size: 2.8rem;
   font-family: circular-black, Helvetica, sans-serif;
   padding: 0; }
+
+.heading-secondary {
+  color: white;
+  font-family: circular-bold, Helvetica, sans-serif;
+  font-size: 1.5rem; }
 
 .heading-tertiary {
   color: white;
@@ -110,6 +128,19 @@ button {
     background-color: white;
     color: #181818; }
 
+.toggle-btns button {
+  color: #9b9b9b;
+  cursor: pointer;
+  transition: 0.3s; }
+  .toggle-btns button:not(:last-of-type) {
+    margin-right: 20px; }
+  .toggle-btns button:hover {
+    color: white; }
+
+.toggle-btns .btn-active {
+  color: white;
+  border-bottom: 1px solid white; }
+
 .row {
   margin-top: 30px; }
   .row a {
@@ -128,23 +159,6 @@ button {
       width: 50px;
       height: 50px;
       opacity: 1; }
-    .row__img .info-icon {
-      fill: white;
-      height: 25px;
-      opacity: 0;
-      transition: 0.3s;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
-  .row__name {
-    color: white;
-    font-family: circular-book, Helvetica, sans-serif;
-    display: inline-block;
-    line-height: 1.1;
-    border-bottom: 1px solid rgba(0, 0, 0, 0); }
-    .row__name:hover {
-      border-bottom: 1px solid white; }
   .row__track-info {
     flex: 1; }
     .row__track-info__more-info {
@@ -161,6 +175,24 @@ button {
   .row:hover img {
     opacity: 0.3; }
 
+.user-icon {
+  border: 2px solid white;
+  border-radius: 100%;
+  padding: 30px;
+  overflow: visible;
+  fill: white; }
+
+.info-icon {
+  fill: white;
+  height: 25px;
+  opacity: 0;
+  transition: 0.4s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; }
+
 .home {
   display: flex;
   background-color: #181818; }
@@ -171,15 +203,10 @@ button {
 
 .profile__header {
   text-align: center; }
-  .profile__header__user-icon {
-    width: 150px;
-    border: 2px solid white;
-    border-radius: 100%;
-    padding: 30px;
-    overflow: visible;
+  .profile__header .user-icon {
     margin-top: 82px;
     margin-bottom: 18px;
-    fill: white; }
+    width: 150px; }
   .profile__header .heading-primary {
     margin-bottom: 20px; }
   .profile__header__username {
@@ -242,3 +269,37 @@ button {
     width: 30%; }
     .playlist__left img {
       width: 250px; }
+
+.top-artists-header {
+  display: flex;
+  align-items: center; }
+  .top-artists-header h1 {
+    flex: 1; }
+
+.top-artists__artists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 50px; }
+  .top-artists__artists li {
+    width: 200px; }
+    .top-artists__artists li .img-container {
+      position: relative; }
+    .top-artists__artists li .artist-image {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      transition: 0.3s; }
+    .top-artists__artists li .user-icon {
+      width: 200px;
+      height: 200px; }
+    .top-artists__artists li .name-container {
+      text-align: center;
+      display: block;
+      margin-top: 20px; }
+    .top-artists__artists li:hover .info-icon {
+      opacity: 1; }
+    .top-artists__artists li:hover .artist-image {
+      opacity: 0.4; }

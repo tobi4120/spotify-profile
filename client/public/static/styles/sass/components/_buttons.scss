@@ -16,3 +16,25 @@
         color: $dark-grey;
     }
 }
+
+.toggle-btns {
+
+    button {
+        color: $light-grey;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:not(:last-of-type) {
+            margin-right: 20px;
+        }
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .btn-active {
+        color: white;
+        border-bottom: 1px solid white;
+    }
+}

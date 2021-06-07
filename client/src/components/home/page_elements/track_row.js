@@ -10,7 +10,7 @@ export default function TrackRow(props) {
                 </div>
 
                 <div className="row__track-info">
-                    <p className="row__name">{props.track.name}</p>
+                    <p className="paragraph">{props.track.name}</p>
                     <p className="row__track-info__more-info">{props.track.artists[0].name} &middot; {props.track.album.name}</p>
                 </div>
 
