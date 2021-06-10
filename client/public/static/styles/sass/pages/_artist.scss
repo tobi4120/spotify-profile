@@ -1,0 +1,57 @@
+.artist-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+        object-fit: cover;
+    }
+
+    &__user-icon {
+        width: 250px;
+        height: 250px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .heading-primary {
+        margin-top: 32px;
+        margin-bottom: 20px;
+        font-size: 4.3rem;
+    }
+
+    &__stats {
+        display: flex;
+
+        &__group {
+            text-align: center;
+            margin-right: 40px;
+        }
+
+        &__header {
+            text-transform: uppercase;
+            color: $light-grey;
+            font-family: circular-light, $back-up-fonts;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        &__stat {
+            color: $spotify-blue;
+            font-family: circular-medium, $back-up-fonts;
+            text-transform: capitalize;
+            font-size: 1.35rem;
+        }
+
+        .genre {
+            font-size: 1.2rem;
+        }
+    }
+}

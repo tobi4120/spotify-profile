@@ -18,9 +18,6 @@ button {
   background-color: rgba(0, 0, 0, 0);
   border: none; }
 
-.page-body {
-  padding: 85px 80px; }
-
 @font-face {
   src: url(../../fonts/circular-black.woff2);
   font-family: circular-black; }
@@ -52,6 +49,7 @@ button {
     border-bottom: 1px solid white; }
 
 .heading-primary {
+  color: white;
   font-size: 2.8rem;
   font-family: circular-black, Helvetica, sans-serif;
   padding: 0; }
@@ -199,12 +197,12 @@ button {
   .home__dashboard {
     width: 100%;
     height: 100vh;
-    overflow: scroll; }
+    overflow: scroll;
+    padding: 85px 80px; }
 
 .profile__header {
   text-align: center; }
   .profile__header .user-icon {
-    margin-top: 82px;
     margin-bottom: 18px;
     width: 150px; }
   .profile__header .heading-primary {
@@ -241,8 +239,7 @@ button {
 
 .profile__body {
   display: flex;
-  justify-content: center;
-  padding-bottom: 110px; }
+  justify-content: center; }
   .profile__body__header {
     display: flex;
     align-items: center; }
@@ -254,14 +251,14 @@ button {
     margin-top: 40px; }
   .profile__body__top-artists {
     margin-right: 45px;
-    width: 40%; }
+    width: 45%; }
     .profile__body__top-artists .row__img {
       border-radius: 50%; }
       .profile__body__top-artists .row__img img {
         border-radius: 50%; }
   .profile__body__top-tracks {
     margin-left: 45px;
-    width: 40%; }
+    width: 45%; }
 
 .playlist {
   display: flex; }
@@ -303,3 +300,42 @@ button {
       opacity: 1; }
     .top-artists__artists li:hover .artist-image {
       opacity: 0.4; }
+
+.artist-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .artist-page__image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+    object-fit: cover; }
+  .artist-page__user-icon {
+    width: 250px;
+    height: 250px; }
+    .artist-page__user-icon svg {
+      width: 100%;
+      height: 100%; }
+  .artist-page .heading-primary {
+    margin-top: 32px;
+    margin-bottom: 20px;
+    font-size: 4.3rem; }
+  .artist-page__stats {
+    display: flex; }
+    .artist-page__stats__group {
+      text-align: center;
+      margin-right: 40px; }
+    .artist-page__stats__header {
+      text-transform: uppercase;
+      color: #9b9b9b;
+      font-family: circular-light, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 1px; }
+    .artist-page__stats__stat {
+      color: #509bf5;
+      font-family: circular-medium, Helvetica, sans-serif;
+      text-transform: capitalize;
+      font-size: 1.35rem; }
+    .artist-page__stats .genre {
+      font-size: 1.2rem; }

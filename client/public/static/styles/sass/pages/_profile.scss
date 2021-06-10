@@ -4,7 +4,6 @@
         text-align: center;
 
         .user-icon {
-            margin-top: 82px;
             margin-bottom: 18px;
             width: 150px;
         }
@@ -65,7 +64,6 @@
     &__body {
         display: flex;
         justify-content: center;
-        padding-bottom: 110px;
 
         // Headers
         &__header {
@@ -88,7 +86,7 @@
         // Top artists
         &__top-artists {
             margin-right: 45px;
-            width: 40%;
+            width: 45%;
 
             // Arists list
             .row__img {
@@ -103,7 +101,7 @@
         // Top tracks
         &__top-tracks {
             margin-left: 45px;
-            width: 40%;
+            width: 45%;
         }
     }
 }
