@@ -1,20 +1,14 @@
 .btn-primary {
-    color: white;
-    border: 1px solid white;
+    @include btn($color-primary, $color-primary, $dark-grey);
+    border: 1px solid $color-primary;
     padding: 12px 30px;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: circular-book, $back-up-fonts;
-    border: 1px solid white;
-    border-radius: 30px;
-    transition: 0.3s;
-    cursor: pointer;
+}
 
-    &:hover {
-        background-color: white;
-        color: $dark-grey;
-    }
+.btn-secondary {
+    @include btn($color-primary, $spotify-green-light, $color-primary);
+    background-color: $spotify-green;
+    display: inline-block;
+    padding: 10px 25px;
 }
 
 .toggle-btns {
@@ -29,12 +23,12 @@
         }
 
         &:hover {
-            color: white;
+            color: $color-primary;
         }
     }
 
     .btn-active {
-        color: white;
-        border-bottom: 1px solid white;
+        color: $color-primary;
+        border-bottom: 1px solid $color-primary;
     }
 }

@@ -1,0 +1,34 @@
+.track-page {
+    &__general-info {
+        display: flex;
+
+        img {
+            width: 250px;
+        }
+
+        &__info {
+            margin-left: 40px;
+
+            .heading-primary {
+                font-size: 2.5rem;
+            }
+
+            .track-artist-name {
+                color: $light-grey-2;
+                font-family: circular-book, $back-up-fonts;
+                font-size: 1.5rem;
+            }
+
+            .track-album-info {
+                color: $light-grey;
+                font-family: circular-light, $back-up-fonts;
+                font-size: 1rem;
+                margin-top: 5px;
+            }
+
+            .btn-secondary {
+                margin-top: 30px;
+            }
+        }
+    }
+}

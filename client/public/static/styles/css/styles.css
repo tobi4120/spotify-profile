@@ -88,7 +88,7 @@ button {
     border-left: 5px solid rgba(1, 1, 1, 0); }
     .menu li:hover {
       background-color: #181818;
-      border-left: 5px solid #1ed760; }
+      border-left: 5px solid #1db954; }
       .menu li:hover svg {
         fill: white; }
       .menu li:hover p {
@@ -104,7 +104,7 @@ button {
     fill: #9b9b9b; }
   .menu .active {
     background-color: #181818;
-    border-left: 5px solid #1ed760; }
+    border-left: 5px solid #1db954; }
     .menu .active svg {
       fill: white; }
     .menu .active p {
@@ -112,19 +112,34 @@ button {
 
 .btn-primary {
   color: white;
-  border: 1px solid white;
-  padding: 12px 30px;
   font-size: 0.75rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-family: circular-book, Helvetica, sans-serif;
-  border: 1px solid white;
   border-radius: 30px;
   transition: 0.3s;
-  cursor: pointer; }
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 12px 30px; }
   .btn-primary:hover {
     background-color: white;
     color: #181818; }
+
+.btn-secondary {
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: circular-book, Helvetica, sans-serif;
+  border-radius: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #1db954;
+  display: inline-block;
+  padding: 10px 25px; }
+  .btn-secondary:hover {
+    background-color: #1ed760;
+    color: white; }
 
 .toggle-btns button {
   color: #9b9b9b;
@@ -211,7 +226,7 @@ button {
     color: white;
     transition: 0.2s; }
     .profile__header__username:hover {
-      color: #1ed760; }
+      color: #1db954; }
   .profile__header__account-stats {
     display: inline-block; }
     .profile__header__account-stats .stats {
@@ -219,7 +234,7 @@ button {
       align-items: center; }
       .profile__header__account-stats .stats .stat span {
         font-family: circular-medium, Helvetica, sans-serif;
-        color: #1ed760;
+        color: #1db954;
         font-size: 1.1rem;
         margin-bottom: 3px;
         display: block; }
@@ -339,3 +354,23 @@ button {
       font-size: 1.35rem; }
     .artist-page__stats .genre {
       font-size: 1.2rem; }
+
+.track-page__general-info {
+  display: flex; }
+  .track-page__general-info img {
+    width: 250px; }
+  .track-page__general-info__info {
+    margin-left: 40px; }
+    .track-page__general-info__info .heading-primary {
+      font-size: 2.5rem; }
+    .track-page__general-info__info .track-artist-name {
+      color: #b3b3b3;
+      font-family: circular-book, Helvetica, sans-serif;
+      font-size: 1.5rem; }
+    .track-page__general-info__info .track-album-info {
+      color: #9b9b9b;
+      font-family: circular-light, Helvetica, sans-serif;
+      font-size: 1rem;
+      margin-top: 5px; }
+    .track-page__general-info__info .btn-secondary {
+      margin-top: 30px; }

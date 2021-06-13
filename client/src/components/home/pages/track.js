@@ -65,18 +65,26 @@ export default function Track(props) {
 
     return (
         <div className="track-page">
-            {track.general.album.images[0]?
-                <img src={track.general.album.images[0].url}/>:
-                <p>Image not found!</p>
-            }
 
             {/* General Info */}
             <div className="track-page__general-info">
-                <h1>{track.general.name}</h1>
-                <h2>{track.general.artists[0].name}</h2>
-                <p>{track.general.album.name} &middot; {(track.general.album.release_date).slice(0, 4)}</p>
 
-                <a href={track.general.external_urls.spotify}>Play on Spotify</a>
+                {/* Image */}
+                {track.general.album.images[0]?
+                    <img src={track.general.album.images[0].url}/>:
+                    <p>Image not found!</p>
+                }
+                
+                {/* Info */}
+                <div className="track-page__general-info__info">
+                    <h1 className="heading-primary">{track.general.name}</h1>
+                    <h2 className="track-artist-name">{track.general.artists[0].name}</h2>
+                    <p className="track-album-info">
+                        {track.general.album.name} &middot; {(track.general.album.release_date).slice(0, 4)}
+                    </p>
+
+                    <a className="btn-secondary" href={track.general.external_urls.spotify}>Play on Spotify</a>
+                </div>
             </div>
 
             {/* Track analysis */}
