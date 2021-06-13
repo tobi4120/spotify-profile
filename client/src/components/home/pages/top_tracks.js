@@ -36,9 +36,10 @@ function TopTracks(props) {
 
     return (
         <div className="top-tracks">
-            <h1 className="heading-secondary">Top Tracks</h1>
-
-            <ToggleBts term={term} set_term={set_term} />
+            <div className="top-header"> {/* Classname is found in _top-artists.scss */}
+                <h1 className="heading-secondary">Top Tracks</h1>
+                <ToggleBts term={term} set_term={set_term} />
+            </div>
 
             <div className="top-tracks__tracklist">
                 {term === "long_term"? props.top_tracks.long.items.map((track, index) => {

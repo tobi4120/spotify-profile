@@ -37,9 +37,8 @@ function TopArtists(props) {
     return (
         <div className="top-artists page-body">
 
-            <div className="top-artists-header">
+            <div className="top-header">
                 <h1 className="heading-secondary">Top Artists</h1>
-
                 <ToggleBts term={term} set_term={set_term} />
             </div>
 

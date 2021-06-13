@@ -267,10 +267,10 @@ button {
     .playlist__left img {
       width: 250px; }
 
-.top-artists-header {
+.top-header {
   display: flex;
   align-items: center; }
-  .top-artists-header h1 {
+  .top-header h1 {
     flex: 1; }
 
 .top-artists__artists {
