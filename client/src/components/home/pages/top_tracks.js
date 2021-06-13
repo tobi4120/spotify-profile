@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import useAuth from '../../useAuth';
 import Loader from "../loader";
-import { Link } from "react-router-dom"
 import { get_topTracks_long, get_topTracks_medium, get_topTracks_short} from "../../../actions";
 import TrackRow from "../page_elements/track_row";
+import ToggleBts from "../page_elements/toggle_buttons";
 
 function TopTracks(props) {
     const accessToken = useAuth(props.code);
@@ -38,11 +38,7 @@ function TopTracks(props) {
         <div className="top-tracks">
             <h1 className="heading-secondary">Top Tracks</h1>
 
-            <div className="top-tracks__toggle-btns">
-                <button onClick={() => set_term("long_term")}>All Time</button>
-                <button onClick={() => set_term("medium_term")}>Last 6 Months</button>
-                <button onClick={() => set_term("short_term")}>Last 4 Weeks</button>
-            </div>
+            <ToggleBts term={term} set_term={set_term} />
 
             <div className="top-tracks__tracklist">
                 {term === "long_term"? props.top_tracks.long.items.map((track, index) => {

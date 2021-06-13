@@ -4,6 +4,7 @@ import Loader from "../loader";
 import { connect } from "react-redux";
 import { get_topArtists_long, get_topArtists_medium, get_topArtists_short } from "../../../actions/index";
 import ArtistIcon from "../page_elements/artist-icon";
+import ToggleBts from "../page_elements/toggle_buttons";
 
 function TopArtists(props) {
     const accessToken = useAuth(props.code)
@@ -39,14 +40,7 @@ function TopArtists(props) {
             <div className="top-artists-header">
                 <h1 className="heading-secondary">Top Artists</h1>
 
-                <div className="toggle-btns">
-                    <button className={term === "long_term"? "btn-active paragraph": "paragraph"} 
-                        onClick={() => set_term("long_term")}>All Time</button>
-                    <button className={term === "medium_term"? "btn-active paragraph": "paragraph"} 
-                        onClick={() => set_term("medium_term")}>Last 6 Months</button>
-                    <button className={term === "short_term"? "btn-active paragraph": "paragraph"}
-                        onClick={() => set_term("short_term")}>Last 4 Weeks</button>
-                </div>
+                <ToggleBts term={term} set_term={set_term} />
             </div>
 
             <ul className="top-artists__artists">
