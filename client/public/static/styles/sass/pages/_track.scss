@@ -31,4 +31,36 @@
             }
         }
     }
+
+    &__analysis {
+        margin-top: 75px;
+
+        &__table {
+            width: 100%;
+            border-collapse: collapse;
+
+            td {
+                width: 20%;
+                text-align: center;
+                color: $light-grey-2;
+                padding: 20px;
+            }
+
+            &__track-data {
+                font-family: circular-bold, $back-up-fonts;
+                font-size: 1.7rem;
+                line-height: 1.2;
+            }
+
+            &__label {
+                font-family: circular-light, $back-up-fonts;
+                font-size: 0.8rem;
+                line-height: 1.2;
+            }
+        }
+
+        table, th, td {
+            border: 1px solid $medium-grey;
+        }
+    }
 }

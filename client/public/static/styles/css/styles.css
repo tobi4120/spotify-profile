@@ -374,3 +374,24 @@ button {
       margin-top: 5px; }
     .track-page__general-info__info .btn-secondary {
       margin-top: 30px; }
+
+.track-page__analysis {
+  margin-top: 75px; }
+  .track-page__analysis__table {
+    width: 100%;
+    border-collapse: collapse; }
+    .track-page__analysis__table td {
+      width: 20%;
+      text-align: center;
+      color: #b3b3b3;
+      padding: 20px; }
+    .track-page__analysis__table__track-data {
+      font-family: circular-bold, Helvetica, sans-serif;
+      font-size: 1.7rem;
+      line-height: 1.2; }
+    .track-page__analysis__table__label {
+      font-family: circular-light, Helvetica, sans-serif;
+      font-size: 0.8rem;
+      line-height: 1.2; }
+  .track-page__analysis table, .track-page__analysis th, .track-page__analysis td {
+    border: 1px solid #404040; }
