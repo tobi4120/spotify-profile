@@ -63,4 +63,20 @@
             border: 1px solid $medium-grey;
         }
     }
+
+    &__features { 
+        display: flex;
+        flex-direction: column;
+        margin-top: 75px;
+        align-items: center;
+
+        &__bar-chart {
+            width: 70%;
+        }
+
+        .heading-secondary {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    }
 }

@@ -282,6 +282,31 @@ button {
     .playlist__left img {
       width: 250px; }
 
+.heading-playlists {
+  margin-bottom: 30px; }
+
+.playlists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 0;
+  justify-content: center; }
+  .playlists .playlist {
+    width: 210px; }
+    .playlists .playlist a {
+      text-align: center; }
+      .playlists .playlist a img {
+        max-width: 100%;
+        max-height: 100%; }
+    .playlists .playlist__name {
+      margin-top: 15px;
+      margin-bottom: 5px;
+      display: inline-block; }
+    .playlists .playlist__track-count {
+      color: #9b9b9b;
+      font-family: circular-book, Helvetica, sans-serif;
+      font-size: 0.8rem; }
+
 .top-header {
   display: flex;
   align-items: center; }
@@ -395,3 +420,14 @@ button {
       line-height: 1.2; }
   .track-page__analysis table, .track-page__analysis th, .track-page__analysis td {
     border: 1px solid #404040; }
+
+.track-page__features {
+  display: flex;
+  flex-direction: column;
+  margin-top: 75px;
+  align-items: center; }
+  .track-page__features__bar-chart {
+    width: 70%; }
+  .track-page__features .heading-secondary {
+    font-size: 1.2rem;
+    margin-bottom: 20px; }

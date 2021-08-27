@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../useAuth";
 import Loader from "../loader";
 import axios from "axios";
-import { Bar } from "react-chartjs-2";
+//import { Bar } from "react-chartjs-2";
 import { tracks_in_string, get_avg_features } from "../helper_functions";
 import TrackRow from "../page_elements/track_row";
 
@@ -71,7 +71,7 @@ export default function Playlist(props) {
                 <div className="playlist__features">
                     <h2>Audio Features</h2>
 
-                    <Bar 
+                    {/*<Bar 
                     data = {{
                         labels: Object.keys(audio_features),
                         datasets: [{
@@ -105,6 +105,7 @@ export default function Playlist(props) {
                         display: false,
                     }}
                 />
+                */}
                 </div>
             </div>
             <div className="playlist__right">

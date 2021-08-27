@@ -23,18 +23,21 @@ export default function Playlists(props) {
     if (isLoading) return <Loader />
 
     return (
-        <div className="playlists">
-            {playlists.map(playlist => {
-                return (
-                    <div className="playlist" key={playlist.id}>
-                        <a href={`playlist/${playlist.id}`}> 
-                            <img className="playlist__img" src={playlist.images[0] && playlist.images[0].url} />
-                            <p className="playlist__name">{playlist.name}</p>
-                            <p className="playlist__track-count">{playlist.tracks.total}</p>
-                        </a>
-                    </div>
-                )
-            })}
+        <div>
+            <h1 className="heading-secondary heading-playlists">Your Playlists</h1>
+                <div className="playlists">
+                {playlists.map(playlist => {
+                    return (
+                        <div className="playlist" key={playlist.id}>
+                            <a href={`playlist/${playlist.id}`}> 
+                                <img className="playlist__img" src={playlist.images[0] && playlist.images[0].url} />
+                                <p className="playlist__name paragraph">{playlist.name}</p>
+                                <p className="playlist__track-count">{playlist.tracks.total} TRACKS</p>
+                            </a>
+                        </div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

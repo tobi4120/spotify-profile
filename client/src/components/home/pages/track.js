@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useAuth from "../../useAuth";
 import Loader from "../loader";
 import axios from "axios";
-import { Bar } from "react-chartjs-2";
+import FeatureChart from "../page_elements/feature-chart";
 
 export default function Track(props) {
     const accessToken = useAuth(props.code)
@@ -148,37 +148,7 @@ export default function Track(props) {
             </div>
 
             {/* Audio Features */}
-            <div className="track-page__features">
-
-                <h2>Audio Features</h2>
-
-                <Bar 
-                    data = {{
-                        labels: Object.keys(track.features),
-                        datasets: [{
-                            label: 'Features',
-                            data: Object.values(track.features),
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    }}
-                />
-            </div>
+            <FeatureChart track={track} />
         </div>
     )
 }
