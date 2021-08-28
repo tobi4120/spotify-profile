@@ -293,15 +293,36 @@ button {
   justify-content: center; }
   .playlists .playlist {
     width: 210px; }
+    .playlists .playlist__img-container {
+      position: relative;
+      width: 210px;
+      height: 210px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px; }
+      .playlists .playlist__img-container:hover .overlay {
+        opacity: 0.5; }
     .playlists .playlist a {
+      cursor: default;
       text-align: center; }
       .playlists .playlist a img {
         max-width: 100%;
         max-height: 100%; }
+      .playlists .playlist a .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        cursor: pointer;
+        transition: 0.3s; }
     .playlists .playlist__name {
       margin-top: 15px;
       margin-bottom: 5px;
-      display: inline-block; }
+      border-bottom: none;
+      cursor: pointer; }
+      .playlists .playlist__name:hover {
+        text-decoration: underline; }
     .playlists .playlist__track-count {
       color: #9b9b9b;
       font-family: circular-book, Helvetica, sans-serif;

@@ -30,7 +30,10 @@ export default function Playlists(props) {
                     return (
                         <div className="playlist" key={playlist.id}>
                             <a href={`playlist/${playlist.id}`}> 
-                                <img className="playlist__img" src={playlist.images[0] && playlist.images[0].url} />
+                                <div className="playlist__img-container">
+                                    <img className="playlist__img" src={playlist.images[0] && playlist.images[0].url} />
+                                    <div class="overlay"></div>
+                                </div>
                                 <p className="playlist__name paragraph">{playlist.name}</p>
                                 <p className="playlist__track-count">{playlist.tracks.total} TRACKS</p>
                             </a>
