@@ -50,13 +50,16 @@ export const get_avg_features = (tracks) => {
 
     if (tracks.length > 1) {
         for (const track of tracks) {
-            acousticness += track.acousticness
-            danceability += track.danceability
-            energy += track.energy
-            instrumentalness += track.instrumentalness
-            liveness += track.liveness
-            speechiness += track.speechiness
-            valence += track.valence
+
+            if (track) {
+                acousticness += track.acousticness
+                danceability += track.danceability
+                energy += track.energy
+                instrumentalness += track.instrumentalness
+                liveness += track.liveness
+                speechiness += track.speechiness
+                valence += track.valence
+            }
         }
     
         acousticness = acousticness/tracks.length
