@@ -148,7 +148,7 @@ export default function Track(props) {
             </div>
 
             {/* Audio Features */}
-            <FeatureChart track={track} />
+            <FeatureChart track={track} type="bar" />
         </div>
     )
 }

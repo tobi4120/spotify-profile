@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import useAuth from "../../useAuth";
 import Loader from "../loader";
 import axios from "axios";
-//import { Bar } from "react-chartjs-2";
 import { tracks_in_string, get_avg_features } from "../helper_functions";
 import TrackRow from "../page_elements/track_row";
+import FeatureChart from "../page_elements/feature-chart";
 
 export default function Playlist(props) {
     const accessToken = useAuth(props.code);
@@ -45,7 +45,9 @@ export default function Playlist(props) {
         })
 
         // Calculate the average features for all the tracks
-        set_features(get_avg_features(features_response.data.audio_features));
+        const features_dict = {}
+        features_dict.features = get_avg_features(features_response.data.audio_features);
+        set_features(features_dict);
 
         // Add response to playlist variable
         set_playlist(playlist_response.data);
@@ -60,16 +62,18 @@ export default function Playlist(props) {
     return (
         <div className="playlist">
             <div className="playlist__left">
-                <img src={playlist.images[0] && playlist.images[0].url} />
+                <img className="playlist-img" src={playlist.images[0] && playlist.images[0].url} />
 
-                <a href={playlist.external_urls.spotify}><h1 className="heading-secondary">{playlist.name}</h1></a>
-                <p>By {playlist.owner.display_name}</p>
-                <p>{playlist.tracks.total} Tracks</p>
+                <a href={playlist.external_urls.spotify}>
+                    <h1 className="heading-secondary playlist-name">{playlist.name}</h1>
+                </a>
+                <p className="owner-name">By {playlist.owner.display_name}</p>
+                <p className="track-count">{playlist.tracks.total} Tracks</p>
 
-                <a href={`/reccomendations/${playlist.id}`}>Get Reccomendations</a>
+                <a className="btn-secondary" href={`/reccomendations/${playlist.id}`}>Get Reccomendations</a>
 
-                <div className="playlist__features">
-                    <h2>Audio Features</h2>
+                <div className="playlist__left__features">
+                    {<FeatureChart track={audio_features} type="horizontalBar" aspectRatio="1" />}
 
                     {/*<Bar 
                     data = {{

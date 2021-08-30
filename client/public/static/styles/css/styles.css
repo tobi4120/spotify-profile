@@ -278,9 +278,40 @@ button {
 .playlist {
   display: flex; }
   .playlist__left {
-    width: 30%; }
-    .playlist__left img {
-      width: 250px; }
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 70px; }
+    .playlist__left__features {
+      margin-top: 15px;
+      height: 350px;
+      width: 350px; }
+    .playlist__left .playlist-img {
+      width: 300px;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px; }
+    .playlist__left .playlist-name {
+      margin-top: 20px;
+      font-size: 1.8rem; }
+    .playlist__left .owner-name {
+      color: #9b9b9b;
+      font-family: circular-book, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      margin-top: 5px; }
+    .playlist__left .track-count {
+      color: white;
+      font-family: circular-book, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      margin-top: 10px; }
+    .playlist__left .btn-secondary {
+      margin-top: 25px; }
+    .playlist__left .audio-features-header {
+      margin-top: 45px;
+      font-size: 1.2rem; }
+  .playlist__right {
+    width: 100%; }
+    .playlist__right .row:first-child {
+      margin: 0; }
 
 .heading-playlists {
   margin-bottom: 30px; }

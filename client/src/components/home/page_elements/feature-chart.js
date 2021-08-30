@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 export default function FeatureChart(props) {
     useEffect(() => {
         createChart();
+        console.log(props)
     }, [])
 
     const createChart = () => {
@@ -12,7 +13,7 @@ export default function FeatureChart(props) {
         const data = Object.values(props.track.features);
   
         new Chart(ctx, {
-          type: 'bar',
+          type: props.type,
           data: {
             labels,
             datasets: [
@@ -42,6 +43,7 @@ export default function FeatureChart(props) {
             ],
           },
           options: {
+            aspectRatio: props.aspectRatio? props.aspectRatio: 2,
             layout: {
               padding: {
                 left: 0,

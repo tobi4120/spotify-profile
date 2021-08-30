@@ -2,10 +2,59 @@
     display: flex;
 
     &__left {
-        width: 30%;
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 70px;
 
-        img {
-            width: 250px;
+        &__features {
+            margin-top: 15px;
+            height: 350px;
+            width: 350px;
+        }
+
+        .playlist-img {
+            width: 300px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+        }
+
+        .playlist-name {
+            margin-top: 20px;
+            font-size: 1.8rem;
+        }
+
+        .owner-name {
+            color: $light-grey;
+            font-family: circular-book, $back-up-fonts;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .track-count {
+            color: white;
+            font-family: circular-book, $back-up-fonts;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .btn-secondary {
+            margin-top: 25px;
+        }
+
+        .audio-features-header {
+            margin-top: 45px;
+            font-size: 1.2rem;
         }
     }
+
+    &__right {
+        width: 100%;
+
+        .row:first-child {
+            margin: 0;
+        }
+    }
+
+
 }
