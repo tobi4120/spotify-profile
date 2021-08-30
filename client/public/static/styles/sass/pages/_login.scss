@@ -1,0 +1,26 @@
+.login-page {
+    background-color: rgb(24, 24, 24);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .contents {
+        position: absolute;
+        top: 35%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        .btn-secondary {
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+    }
+}

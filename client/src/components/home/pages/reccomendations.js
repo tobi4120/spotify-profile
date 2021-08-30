@@ -85,7 +85,6 @@ export default function Recommendations(props) {
     return (
         <div className="reccomendations">
             <h1 className="heading-secondary">Recommended Tracks Based On {playlistName}</h1>
-            <button>Save to Spotify</button>
             
             {reccoTracks.map(track => {
                 return <TrackRow key={track.id} track={track}/>
