@@ -608,7 +608,13 @@ button {
     .toggle-btns .btn-container {
       flex: 1;
       margin-right: 0 !important;
-      text-align: center; } }
+      text-align: center; }
+  .artist-page__image {
+    margin-top: 60px;
+    width: 200px;
+    height: 200px; }
+  .artist-page .heading-primary {
+    font-size: 3.1rem; } }
 
 @media (max-width: 400px) {
   .home__dashboard {
@@ -630,3 +636,16 @@ button {
       height: 120px; }
   .toggle-btns button {
     font-size: 0.8rem; } }
+
+@media (max-width: 525px) {
+  .artist-page__image {
+    margin-top: 50px; }
+  .artist-page .heading-primary {
+    font-size: 2.4rem;
+    text-align: center; }
+  .artist-page__stats {
+    gap: 15px; }
+    .artist-page__stats__group {
+      margin-right: 0; }
+    .artist-page__stats__stat {
+      font-size: 1.1rem !important; } }

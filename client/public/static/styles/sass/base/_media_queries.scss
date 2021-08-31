@@ -1,4 +1,4 @@
-// Tablet
+// 770px
 @media (max-width: 770px) {
 
     // Home
@@ -113,9 +113,22 @@
             text-align: center;
         }
     }
+
+    // Artist 
+    .artist-page {
+        &__image {
+            margin-top: 60px;
+            width: 200px;
+            height: 200px;
+        }
+
+        .heading-primary {
+            font-size: 3.1rem;
+        }
+    }
 }
 
-// Mobile
+// 400px
 @media (max-width: 400px) {
 
     // Home
@@ -165,6 +178,33 @@
 
         button {
             font-size: 0.8rem;
+        }
+    }
+}
+
+// 525px
+@media (max-width: 525px) {
+    // Artist 
+    .artist-page {
+        &__image {
+            margin-top: 50px;
+        }
+
+        .heading-primary {
+            font-size: 2.4rem;
+            text-align: center;
+        }
+
+        &__stats {
+            gap: 15px;
+
+            &__group {
+                margin-right: 0;
+            }
+
+            &__stat {
+                font-size: 1.1rem !important;
+            }
         }
     }
 }
