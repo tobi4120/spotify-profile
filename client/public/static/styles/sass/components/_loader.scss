@@ -1,0 +1,52 @@
+.loader {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.rectangle {
+    background-color: #9b9b9b;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.rect-1 {
+    animation: stretch 1s linear infinite;
+    transform-origin: bottom;
+}
+
+.rect-2 {
+    animation: stretch 1s linear infinite;
+    animation-delay: 0.25s;
+    transform-origin: bottom;
+}
+
+.rect-3 {
+    animation: stretch 1s linear infinite;
+    transform-origin: bottom;
+}
+
+.rect-4 {
+    animation: stretch 1s linear infinite;
+    animation-delay: 0.5s;
+    transform-origin: bottom;
+}
+
+.rect-5 {
+    animation: stretch 1s linear infinite;
+    animation-delay: 0.75s;
+    transform-origin: bottom;
+}
+
+@keyframes stretch {
+    50% {
+        transform: scaleY(6);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
