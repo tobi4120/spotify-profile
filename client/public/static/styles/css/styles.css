@@ -545,3 +545,29 @@ button {
   .track-page__features .heading-secondary {
     font-size: 1.2rem;
     margin-bottom: 20px; }
+
+@media (max-width: 770px) {
+  .home {
+    display: block; }
+  .menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 70px;
+    z-index: 100;
+    padding: 0; }
+    .menu .spotify-logo {
+      display: none; }
+    .menu .menu-pages {
+      display: flex; }
+      .menu .menu-pages a {
+        flex: 1; }
+      .menu .menu-pages li {
+        height: 100%;
+        border-top: 4px solid rgba(1, 1, 1, 0);
+        border-left: none; }
+        .menu .menu-pages li:hover {
+          border-top: 4px solid #1db954; }
+      .menu .menu-pages .active {
+        border-top: 4px solid #1db954; } }

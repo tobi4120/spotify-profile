@@ -1,0 +1,41 @@
+@media (max-width: 770px) {
+    .home {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 70px;
+        z-index: 100;
+        padding: 0;
+
+        .spotify-logo {
+            display: none;
+        }
+
+        .menu-pages {
+            display: flex;
+
+            a {
+                flex: 1;
+            }
+
+            li {
+                height: 100%;
+                border-top: 4px solid rgba(1,1,1,0);
+                border-left: none;
+
+                &:hover {
+                    border-top: 4px solid $spotify-green;
+                }
+            }
+
+            .active {
+                border-top: 4px solid $spotify-green;
+            }
+        }
+    }
+}
