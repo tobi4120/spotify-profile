@@ -141,18 +141,19 @@ button {
     background-color: #1ed760;
     color: white; }
 
-.toggle-btns button {
-  color: #9b9b9b;
-  cursor: pointer;
-  transition: 0.3s; }
-  .toggle-btns button:not(:last-of-type) {
+.toggle-btns .btn-container {
+  display: inline-block; }
+  .toggle-btns .btn-container:not(:last-of-type) {
     margin-right: 20px; }
-  .toggle-btns button:hover {
-    color: white; }
-
-.toggle-btns .btn-active {
-  color: white;
-  border-bottom: 1px solid white; }
+  .toggle-btns .btn-container button {
+    color: #9b9b9b;
+    cursor: pointer;
+    transition: 0.3s; }
+    .toggle-btns .btn-container button:hover {
+      color: white; }
+  .toggle-btns .btn-container .btn-active {
+    color: white;
+    border-bottom: 1px solid white; }
 
 .info-icon {
   fill: white;
@@ -551,7 +552,7 @@ button {
   .home {
     display: block; }
     .home__dashboard {
-      padding: 65px 35px;
+      padding: 55px 40px;
       padding-bottom: 120px; }
   .menu {
     position: fixed;
@@ -586,4 +587,46 @@ button {
       margin-bottom: 55px; }
     .profile__body__top-tracks {
       width: 100%;
-      margin-left: 0; } }
+      margin-left: 0; }
+  .top-artists .top-header {
+    flex-direction: column;
+    width: 100%; }
+    .top-artists .top-header h1 {
+      margin-bottom: 35px; }
+  .top-artists li {
+    width: 150px; }
+    .top-artists li .artist-image {
+      width: 150px;
+      height: 150px; }
+    .top-artists li .user-icon {
+      width: 150px;
+      height: 150px; }
+  .toggle-btns {
+    display: flex;
+    width: 100%;
+    justify-content: center; }
+    .toggle-btns .btn-container {
+      flex: 1;
+      margin-right: 0 !important;
+      text-align: center; } }
+
+@media (max-width: 400px) {
+  .home__dashboard {
+    padding: 35px 25px;
+    padding-bottom: 120px; }
+  .profile__header__username {
+    font-size: 2rem; }
+  .profile .heading-tertiary {
+    font-size: 1.1rem; }
+  .profile .body-btn {
+    padding: 7px 17px; }
+  .top-artists li {
+    width: 120px; }
+    .top-artists li .artist-image {
+      width: 120px;
+      height: 120px; }
+    .top-artists li .user-icon {
+      width: 120px;
+      height: 120px; }
+  .toggle-btns button {
+    font-size: 0.8rem; } }

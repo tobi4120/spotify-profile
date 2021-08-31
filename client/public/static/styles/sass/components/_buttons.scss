@@ -13,22 +13,26 @@
 
 .toggle-btns {
 
-    button {
-        color: $light-grey;
-        cursor: pointer;
-        transition: 0.3s;
-
+    .btn-container {
+        display: inline-block;
+        
         &:not(:last-of-type) {
             margin-right: 20px;
         }
 
-        &:hover {
-            color: $color-primary;
+        button {
+            color: $light-grey;
+            cursor: pointer;
+            transition: 0.3s;
+    
+            &:hover {
+                color: $color-primary;
+            }
         }
-    }
 
-    .btn-active {
-        color: $color-primary;
-        border-bottom: 1px solid $color-primary;
+        .btn-active {
+            color: $color-primary;
+            border-bottom: 1px solid $color-primary;
+        }
     }
 }
