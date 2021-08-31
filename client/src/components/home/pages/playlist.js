@@ -73,7 +73,7 @@ export default function Playlist(props) {
                 <a className="btn-secondary" href={`/reccomendations/${playlist.id}`}>Get Reccomendations</a>
 
                 <div className="playlist__left__features">
-                    {<FeatureChart track={audio_features} type="horizontalBar" aspectRatio="1" />}
+                    {<FeatureChart track={audio_features} type="horizontalBar" />}
 
                     {/*<Bar 
                     data = {{

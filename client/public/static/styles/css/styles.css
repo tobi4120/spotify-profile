@@ -520,12 +520,17 @@ button {
   margin-top: 75px; }
   .track-page__analysis__table {
     width: 100%;
-    border-collapse: collapse; }
-    .track-page__analysis__table td {
-      width: 20%;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    border-bottom: 1px solid #404040;
+    border-left: 1px solid #404040; }
+    .track-page__analysis__table .table-data {
+      width: 100%;
       text-align: center;
       color: #b3b3b3;
-      padding: 20px; }
+      padding: 20px;
+      border-top: 1px solid #404040;
+      border-right: 1px solid #404040; }
     .track-page__analysis__table__track-data {
       font-family: circular-bold, Helvetica, sans-serif;
       font-size: 1.7rem;
@@ -534,19 +539,11 @@ button {
       font-family: circular-light, Helvetica, sans-serif;
       font-size: 0.8rem;
       line-height: 1.2; }
-  .track-page__analysis table, .track-page__analysis th, .track-page__analysis td {
-    border: 1px solid #404040; }
 
-.track-page__features {
-  display: flex;
-  flex-direction: column;
-  margin-top: 75px;
-  align-items: center; }
-  .track-page__features__bar-chart {
-    width: 70%; }
-  .track-page__features .heading-secondary {
-    font-size: 1.2rem;
-    margin-bottom: 20px; }
+.track-page__feature-chart {
+  width: 90%;
+  max-width: 675px;
+  margin: auto; }
 
 @media (max-width: 770px) {
   .home {
@@ -588,10 +585,10 @@ button {
     .profile__body__top-tracks {
       width: 100%;
       margin-left: 0; }
-  .top-artists .top-header {
+  .top-header {
     flex-direction: column;
     width: 100%; }
-    .top-artists .top-header h1 {
+    .top-header h1 {
       margin-bottom: 35px; }
   .top-artists li {
     width: 150px; }
@@ -614,7 +611,15 @@ button {
     width: 200px;
     height: 200px; }
   .artist-page .heading-primary {
-    font-size: 3.1rem; } }
+    font-size: 3.1rem; }
+  .track-page__general-info img {
+    width: 200px; }
+  .track-page__general-info .heading-primary {
+    font-size: 1.8rem; }
+  .track-page__general-info .track-artist-name {
+    font-size: 1.2rem; }
+  .track-page__analysis__table__track-data {
+    font-size: 1.5rem; } }
 
 @media (max-width: 400px) {
   .home__dashboard {
@@ -648,4 +653,20 @@ button {
     .artist-page__stats__group {
       margin-right: 0; }
     .artist-page__stats__stat {
-      font-size: 1.1rem !important; } }
+      font-size: 1.1rem !important; }
+  .track-page__general-info {
+    flex-direction: column;
+    align-items: center; }
+    .track-page__general-info__info {
+      margin-left: 0;
+      text-align: center; }
+      .track-page__general-info__info .heading-primary {
+        margin-top: 25px; }
+  .track-page__analysis {
+    margin-top: 50px; }
+  .track-page__feature-chart {
+    width: 100%; } }
+
+@media (max-width: 600px) {
+  .track-page__analysis__table {
+    grid-template-columns: repeat(2, minmax(100px, 1fr)); } }

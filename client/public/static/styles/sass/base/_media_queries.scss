@@ -75,17 +75,18 @@
         }
     }
 
+    // Top Artists/Tracks Header
+    .top-header {
+        flex-direction: column;
+        width: 100%;
+
+        h1 {
+            margin-bottom: 35px;
+        }
+    }
+
     // Top Artists
     .top-artists {
-        .top-header {
-            flex-direction: column;
-            width: 100%;
-
-            h1 {
-                margin-bottom: 35px;
-            }
-        }
-
         li {
             width: 150px;
 
@@ -124,6 +125,31 @@
 
         .heading-primary {
             font-size: 3.1rem;
+        }
+    }
+
+    // Track
+    .track-page {
+        &__general-info {
+            img {
+                width: 200px;
+            }
+
+            .heading-primary {
+                font-size: 1.8rem;
+            }
+
+            .track-artist-name {
+                font-size: 1.2rem;
+            }
+        }
+
+        &__analysis {
+            &__table {
+                &__track-data {
+                    font-size: 1.5rem;
+                }
+            }
         }
     }
 }
@@ -204,6 +230,44 @@
 
             &__stat {
                 font-size: 1.1rem !important;
+            }
+        }
+    }
+
+    // Track
+    .track-page {
+        &__general-info {
+            flex-direction: column;
+            align-items: center;
+
+            &__info {
+                margin-left: 0;
+                text-align: center;
+
+                .heading-primary {
+                    margin-top: 25px;
+                }
+            }
+        }
+
+        &__analysis {
+            margin-top: 50px;
+        }
+
+        &__feature-chart {
+            width: 100%;
+        }
+    }
+}
+
+// 600px 
+@media (max-width: 600px) {
+
+    // Track
+    .track-page {
+        &__analysis {
+            &__table {
+                grid-template-columns: repeat(2, minmax(100px, 1fr));
             }
         }
     }

@@ -89,66 +89,62 @@ export default function Track(props) {
 
             {/* Track analysis */}
             <div className="track-page__analysis">
-                <table className="track-page__analysis__table">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">
-                                    {/* Track minutes */}
-                                    {Math.floor(track.analysis.track.duration / 60)}:
+                <div className="track-page__analysis__table">
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">
+                            {/* Track minutes */}
+                            {Math.floor(track.analysis.track.duration / 60)}:
 
-                                    {/* Track seconds */}
-                                    {Math.round(track.analysis.track.duration % 60).toLocaleString('en-US', {
-                                        minimumIntegerDigits: 2,
-                                    })}
-                                </p>
-                                <p className="track-page__analysis__table__label">Duration</p>
-                            </td>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{keys[`${track.analysis.track.key}`]}</p>
-                                <p className="track-page__analysis__table__label">Key</p>
-                            </td>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{track.analysis.track.mode === 1? 'Major': 'Minor'}</p>
-                                <p className="track-page__analysis__table__label">Modality</p>
-                            </td>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{track.analysis.track.time_signature}</p>
-                                <p className="track-page__analysis__table__label">Time Signature</p>
-                            </td>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{Math.round(track.analysis.track.tempo)}</p>
-                                <p className="track-page__analysis__table__label">Tempo (BPM)</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{track.general.popularity}%</p>
-                                <p className="track-page__analysis__table__label">Popularity</p>
-                            </td>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{track.analysis.bars.length}</p>
-                                <p className="track-page__analysis__table__label">Bars</p>
-                            </td>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{track.analysis.beats.length}</p>
-                                <p className="track-page__analysis__table__label">Beats</p>
-                            </td>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{track.analysis.sections.length}</p>
-                                <p className="track-page__analysis__table__label">Sections</p>
-                            </td>
-                            <td>
-                                <p className="track-page__analysis__table__track-data">{track.analysis.segments.length}</p>
-                                <p className="track-page__analysis__table__label">Segments</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                            {/* Track seconds */}
+                            {Math.round(track.analysis.track.duration % 60).toLocaleString('en-US', {
+                                minimumIntegerDigits: 2,
+                            })}
+                        </p>
+                        <p className="track-page__analysis__table__label">Duration</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{keys[`${track.analysis.track.key}`]}</p>
+                        <p className="track-page__analysis__table__label">Key</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{track.analysis.track.mode === 1? 'Major': 'Minor'}</p>
+                        <p className="track-page__analysis__table__label">Modality</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{track.analysis.track.time_signature}</p>
+                        <p className="track-page__analysis__table__label">Time Signature</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{Math.round(track.analysis.track.tempo)}</p>
+                        <p className="track-page__analysis__table__label">Tempo (BPM)</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{track.general.popularity}%</p>
+                        <p className="track-page__analysis__table__label">Popularity</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{track.analysis.bars.length}</p>
+                        <p className="track-page__analysis__table__label">Bars</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{track.analysis.beats.length}</p>
+                        <p className="track-page__analysis__table__label">Beats</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{track.analysis.sections.length}</p>
+                        <p className="track-page__analysis__table__label">Sections</p>
+                    </div>
+                    <div className="table-data">
+                        <p className="track-page__analysis__table__track-data">{track.analysis.segments.length}</p>
+                        <p className="track-page__analysis__table__label">Segments</p>
+                    </div>
+                </div>
             </div>
 
             {/* Audio Features */}
-            <FeatureChart track={track} type="bar" />
+            <div className="track-page__feature-chart">
+                <FeatureChart track={track} type="bar" />
+            </div>
         </div>
     )
 }

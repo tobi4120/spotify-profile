@@ -37,13 +37,18 @@
 
         &__table {
             width: 100%;
-            border-collapse: collapse;
+            display: grid;
+            grid-template-columns: repeat(5, minmax(100px, 1fr));
+            border-bottom: 1px solid $medium-grey;
+            border-left: 1px solid $medium-grey;
 
-            td {
-                width: 20%;
+            .table-data {
+                width: 100%;
                 text-align: center;
                 color: $light-grey-2;
                 padding: 20px;
+                border-top: 1px solid $medium-grey;
+                border-right: 1px solid $medium-grey;
             }
 
             &__track-data {
@@ -58,25 +63,11 @@
                 line-height: 1.2;
             }
         }
-
-        table, th, td {
-            border: 1px solid $medium-grey;
-        }
     }
 
-    &__features { 
-        display: flex;
-        flex-direction: column;
-        margin-top: 75px;
-        align-items: center;
-
-        &__bar-chart {
-            width: 70%;
-        }
-
-        .heading-secondary {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
+    &__feature-chart {
+        width: 90%;
+        max-width: 675px;
+        margin: auto;
     }
 }

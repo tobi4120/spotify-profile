@@ -43,7 +43,7 @@ export default function FeatureChart(props) {
             ],
           },
           options: {
-            aspectRatio: props.aspectRatio? props.aspectRatio: 2,
+            aspectRatio: 1,
             layout: {
               padding: {
                 left: 0,
