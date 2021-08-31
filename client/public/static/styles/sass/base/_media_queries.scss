@@ -1,6 +1,11 @@
 @media (max-width: 770px) {
     .home {
         display: block;
+
+        &__dashboard {
+            padding: 65px 35px;
+            padding-bottom: 120px;
+        }
     }
 
     .menu {
@@ -35,6 +40,32 @@
 
             .active {
                 border-top: 4px solid $spotify-green;
+            }
+        }
+    }
+
+    .profile {
+        &__header {
+            &__username {
+                font-size: 2.3rem;
+            }
+
+            .logout {
+                margin-bottom: 65px;
+            }
+        }
+
+        &__body {
+            display: block;
+
+            &__top-artists {
+                width: 100%;
+                margin-bottom: 55px;
+            }
+
+            &__top-tracks {
+                width: 100%;
+                margin-left: 0;
             }
         }
     }

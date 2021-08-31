@@ -169,7 +169,8 @@ button {
   display: flex;
   position: absolute;
   top: 50%;
-  left: 50%; }
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .rectangle {
   background-color: #9b9b9b;
@@ -549,6 +550,9 @@ button {
 @media (max-width: 770px) {
   .home {
     display: block; }
+    .home__dashboard {
+      padding: 65px 35px;
+      padding-bottom: 120px; }
   .menu {
     position: fixed;
     bottom: 0;
@@ -570,4 +574,16 @@ button {
         .menu .menu-pages li:hover {
           border-top: 4px solid #1db954; }
       .menu .menu-pages .active {
-        border-top: 4px solid #1db954; } }
+        border-top: 4px solid #1db954; }
+  .profile__header__username {
+    font-size: 2.3rem; }
+  .profile__header .logout {
+    margin-bottom: 65px; }
+  .profile__body {
+    display: block; }
+    .profile__body__top-artists {
+      width: 100%;
+      margin-bottom: 55px; }
+    .profile__body__top-tracks {
+      width: 100%;
+      margin-left: 0; } }
