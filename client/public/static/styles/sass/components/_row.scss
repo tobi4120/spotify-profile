@@ -26,6 +26,15 @@
     // Row info (for tracks)
     &__track-info {
         flex: 1;
+        min-width: 0;
+        margin-right: 10px;
+
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
 
         &__more-info {
             margin-top: 2px;

@@ -228,7 +228,14 @@ button {
       height: 50px;
       opacity: 1; }
   .row__track-info {
-    flex: 1; }
+    flex: 1;
+    min-width: 0;
+    margin-right: 10px; }
+    .row__track-info p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%; }
     .row__track-info__more-info {
       margin-top: 2px;
       color: #9b9b9b;
