@@ -50,6 +50,7 @@
 
     &__right {
         width: 100%;
+        min-width: 0;
 
         .row:first-child {
             margin: 0;

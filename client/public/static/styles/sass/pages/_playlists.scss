@@ -3,19 +3,15 @@
 }
 
 .playlists {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
-    margin: 0;
-    justify-content: center;
 
     .playlist {
-        width: 210px;
 
         &__img-container {
             position: relative;
-            width: 210px;
-            height: 210px;
+            width: 100%;
             box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
 
             &:hover .overlay {
