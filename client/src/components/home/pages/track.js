@@ -3,6 +3,7 @@ import useAuth from "../../useAuth";
 import Loader from "../loader";
 import axios from "axios";
 import FeatureChart from "../page_elements/feature-chart";
+import Error from "../page_elements/error";
 
 export default function Track(props) {
     const accessToken = useAuth(props.code)
@@ -19,25 +20,38 @@ export default function Track(props) {
     }, [accessToken])
 
     const get_track = async (track_id) => {
+        let isError = false;
 
         // Get general info about the track
         const general_response = await axios.get(`https://api.spotify.com/v1/tracks/${track_id}`, {
             headers: { "Authorization" : `Bearer ${accessToken}` }
         })
         .catch(() => {
-            set_error(true)
-            set_isLoading(false)
+            set_error(true);
+            isError = true;
+            set_isLoading(false);
         })
 
         // Get audio analysis about the track
         const analysis_response = await axios.get(`https://api.spotify.com/v1/audio-analysis/${track_id}`, {
             headers: { "Authorization" : `Bearer ${accessToken}` }
+        }).catch(() => {
+            set_error(true);
+            isError = true;
+            set_isLoading(false);
         })
 
         // Get audio features for the track
         const features_response = await axios.get(`https://api.spotify.com/v1/audio-features/${track_id}`, {
             headers: { "Authorization" : `Bearer ${accessToken}` }
+        }).catch(() => {
+            set_error(true);
+            isError = true;
+            set_isLoading(false);
         })
+
+
+        if (isError) return;
 
         // Parse through features response and put the necessary data in an object called features
         const features = { 
@@ -51,7 +65,7 @@ export default function Track(props) {
         }
 
         // If no track, then return
-        if (!general_response) return
+        if (!general_response) return;
         
         // Put responses in track variable
         set_track({...track, general: general_response.data, analysis: analysis_response.data, features: features })
@@ -61,7 +75,7 @@ export default function Track(props) {
 
     if (isLoading) return <Loader />
 
-    if (error || !track) return <div>Track not found!</div>
+    if (error || !track) return <Error type="Track" />
 
     return (
         <div className="track-page">

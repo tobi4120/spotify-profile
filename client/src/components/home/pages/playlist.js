@@ -5,6 +5,7 @@ import axios from "axios";
 import { tracks_in_string, get_avg_features } from "../helper_functions";
 import TrackRow from "../page_elements/track_row";
 import FeatureChart from "../page_elements/feature-chart";
+import Error from "../page_elements/error";
 
 export default function Playlist(props) {
     const accessToken = useAuth(props.code);
@@ -57,7 +58,7 @@ export default function Playlist(props) {
     }
 
     if (isLoading) return <Loader />
-    if (error || !playlist) return <div>Playlist not found!</div>
+    if (error || !playlist) return <Error type="Playlist" />
 
     return (
         <div className="playlist">

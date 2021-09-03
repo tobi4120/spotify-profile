@@ -16,6 +16,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/utils": "^4.11.2",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "concurrently": "^6.2.1",

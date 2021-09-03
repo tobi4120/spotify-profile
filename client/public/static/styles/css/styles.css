@@ -155,6 +155,12 @@ button {
     color: white;
     border-bottom: 1px solid white; }
 
+.error {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
 .info-icon {
   fill: white;
   height: 25px;
@@ -695,3 +701,8 @@ button {
         text-align: center; }
       .playlist__left__features {
         margin-bottom: 40px; } }
+
+@media (max-width: 500px) {
+  .error .heading-secondary {
+    font-size: 1.4rem;
+    text-align: center; } }

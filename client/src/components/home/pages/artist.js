@@ -2,7 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import useAuth from "../../useAuth";
 import Loader from "../loader";
-import UserIcon from "../page_elements/user-icon"
+import UserIcon from "../page_elements/user-icon";
+import Error from "../page_elements/error";
 
 export default function Artist(props) {
     const accessToken = useAuth(props.code)
@@ -38,7 +39,7 @@ export default function Artist(props) {
 
     if (isLoading) return <Loader />
 
-    if (error || !artist) return <div>Artist not found!</div>
+    if (error || !artist) return <Error type="Artist" />
 
     return (
         <div className="artist-page">

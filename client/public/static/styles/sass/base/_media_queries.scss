@@ -318,3 +318,14 @@
         }
     }
 }
+
+// 500 px
+@media (max-width: 500px) {
+    // Error
+    .error {
+        .heading-secondary {
+            font-size: 1.4rem;
+            text-align: center;
+        }
+    }
+}
