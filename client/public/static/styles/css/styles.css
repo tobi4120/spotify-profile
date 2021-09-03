@@ -502,7 +502,8 @@ button {
 .track-page__general-info {
   display: flex; }
   .track-page__general-info img {
-    width: 250px; }
+    width: 250px;
+    height: 250px; }
   .track-page__general-info__info {
     margin-left: 40px; }
     .track-page__general-info__info .heading-primary {
@@ -616,7 +617,8 @@ button {
   .artist-page .heading-primary {
     font-size: 3.1rem; }
   .track-page__general-info img {
-    width: 200px; }
+    width: 200px;
+    height: 200px; }
   .track-page__general-info .heading-primary {
     font-size: 1.8rem; }
   .track-page__general-info .track-artist-name {
