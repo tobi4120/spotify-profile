@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+require('dotenv').config();
 
 export default function useAuth(code) {
     const [accessToken, setAccessToken] = useState();
     const [refreshToken, setRefreshToken] = useState();
     const [expiresIn, setExpiresIn] = useState();
     const [tokenTimestamp, setTokenTimestamp] = useState();
+
+    const WEB_URL = process.env.REACT_APP_WEB_URL || "https://my-spotifyprofile.herokuapp.com/";
 
     useEffect(() => {
 
@@ -23,7 +26,7 @@ export default function useAuth(code) {
 
         // Get access token from Spotify API
         const fetchData = async () => {
-            axios.post("http://localhost:3001/login", {
+            axios.post(`${WEB_URL}login`, {
             code,
             })
             .then(res => {
@@ -59,7 +62,7 @@ export default function useAuth(code) {
 
             // Refresh access token
             axios
-            .post("http://localhost:3001/refresh", {
+            .post(`${WEB_URL}refresh`, {
                 refreshToken,
             })
             .then(res => {

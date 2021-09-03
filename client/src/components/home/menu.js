@@ -1,5 +1,5 @@
 import React from "react";
-import spotify_logo from "/Users/michaeltobis/Documents/my_code/personal_code/spotify-profile/client/src/components/home/images/spotify-logo-black.png"
+import spotify_logo from "../home/images/spotify-logo-black.png"
 
 function Menu(props) {
     return (

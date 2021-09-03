@@ -1,17 +1,31 @@
 const express = require("express");
 const cors = require("cors")
 const SpotifyWebAPI = require('spotify-web-api-node')
+const path = require('path');
+require('dotenv').config();
 
 const app = express();
 app.use(cors())
 app.use(express.json())
 
+const HEROKU_URL = process.env.HEROKU_URL || 'http://localhost:3000/';
+const CLIENT_ID =  process.env.CLIENT_ID || process.env.REACT_APP_CLIENT_ID
+const CLIENT_SECRET = process.env.CLIENT_SECRET || process.env.REACT_APP_CLIENT_SECRET
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client', 'build')));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+    });
+}
+
 app.post('/login', (req, res) => {
     const code = req.body.code
     const spotifyAPI = new SpotifyWebAPI({
-        redirectUri: 'http://localhost:3000/',
-        clientId: '71a31a9286b54db9839fd01a9d059ae1',
-        clientSecret: '9357e63c9ed04557be2f8325eb07d0a4'
+        redirectUri: HEROKU_URL,
+        clientId: CLIENT_ID,
+        clientSecret: CLIENT_SECRET
     })
 
     spotifyAPI.authorizationCodeGrant(code).then(data => {
@@ -29,9 +43,9 @@ app.post('/login', (req, res) => {
 app.post('/refresh', (req, res) => {
     const refreshToken = req.body.refreshToken
     const spotifyAPI = new SpotifyWebAPI({
-        redirectUri: 'http://localhost:3000/',
-        clientId: '71a31a9286b54db9839fd01a9d059ae1',
-        clientSecret: '9357e63c9ed04557be2f8325eb07d0a4',
+        redirectUri: HEROKU_URL,
+        clientId: CLIENT_ID,
+        clientSecret: CLIENT_SECRET,
         refreshToken
     })
 
@@ -49,4 +63,4 @@ app.post('/refresh', (req, res) => {
         })
 })
 
-app.listen(3001)
+app.listen(process.env.PORT || 3001)
