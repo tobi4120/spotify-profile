@@ -10,7 +10,8 @@
     "heroku-postbuild": "npm run install-client && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && npm start",
-    "dev": "concurrently -n 'server,client' \"nodemon server.js\" \"npm run client\""
+    "watch:sass": "cd client && npm run watch:sass",
+    "dev": "concurrently -n 'server,client,styles' \"nodemon server.js\" \"npm run client\" \"npm run watch:sass\""
   },
   "author": "",
   "license": "ISC",
